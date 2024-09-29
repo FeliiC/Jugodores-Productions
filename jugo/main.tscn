@@ -1,16 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=5 format=3 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://protagonist.tscn" id="1_riqes"]
+[ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://enemy.tscn" id="2_3gt3h"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1isp4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
+size = Vector2(300, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_675rn"]
+size = Vector2(1038, 40)
 
 [node name="Main" type="Node2D"]
-position = Vector2(528, 152)
+position = Vector2(723, 381)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_riqes")]
+position = Vector2(-74, 203)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
+position = Vector2(-505, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 227)
-shape = SubResource("WorldBoundaryShape2D_1isp4")
+position = Vector2(-501, 143)
+shape = SubResource("RectangleShape2D_0up5h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(217, 299)
+shape = SubResource("RectangleShape2D_675rn")
+
+[node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
+position = Vector2(387, 173)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
+position = Vector2(-507, -318)
