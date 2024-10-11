@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=6 format=3 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://enemy.tscn" id="2_3gt3h"]
+[ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://jumping_enemy.tscn" id="3_s5qy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -31,7 +32,10 @@ position = Vector2(217, 299)
 shape = SubResource("RectangleShape2D_675rn")
 
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(387, 173)
+position = Vector2(986, -51)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
 position = Vector2(-507, -318)
+
+[node name="jumping_enemy" parent="." instance=ExtResource("3_s5qy0")]
+position = Vector2(285, 170)
