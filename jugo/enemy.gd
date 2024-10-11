@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var wait_to_jump = false
 @export var speed = 300.0
-@export var gravity = 300
-@export var jump_velocity = -700.0
+@export var gravity = 200
+@export var jump_velocity = -7000.0
 @export var acceleration = 2000
 
 var target: Player
@@ -25,8 +25,7 @@ func _physics_process(delta: float) -> void:
 		var direction = global_position.direction_to(target.global_position)
 		velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 	# Add the gravity.
-	if wait_to_jump:
-		return _jump()
+		
 	if is_on_floor() and not ray_cast.is_colliding():
 		pivot.scale.x *= -1
 	
@@ -34,6 +33,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 
 	move_and_slide()
+	_jump()
+	
+	if wait_to_jump:
+		return 
 
 
 func _on_detection_body_entered(body: Node) -> void:
