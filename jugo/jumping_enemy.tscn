@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp1shbul5kd5s"]
+
+[ext_resource type="Script" path="res://jumping_enemy.gd" id="1_avnu5"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="2_wrrrt"]
+[ext_resource type="Script" path="res://hit_box.gd" id="3_lk0yw"]
+[ext_resource type="Script" path="res://hurt_box.gd" id="4_25kg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vykec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbe5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dlup"]
+size = Vector2(15.8823, 9.87345)
+
+[node name="jumping_enemy" type="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 3
+scale = Vector2(7.99007, 7.90225)
+script = ExtResource("1_avnu5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vykec")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(0.870903, 0.517788, 0.612551, 1)
+self_modulate = Color(0.911269, 0.00953193, 9.62615e-08, 1)
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.144793, 0.137245)
+texture = ExtResource("2_wrrrt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_lk0yw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.250311, -0.253092)
+shape = SubResource("RectangleShape2D_rbe5v")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+light_mask = 8
+visibility_layer = 8
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("4_25kg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(-0.125155, 8.73169)
+shape = SubResource("RectangleShape2D_4dlup")
