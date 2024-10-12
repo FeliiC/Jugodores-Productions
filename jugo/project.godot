@@ -23,3 +23,7 @@ Manager="*res://manager.tscn"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="Mundo"
