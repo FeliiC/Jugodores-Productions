@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 @export var wait_to_jump = false
 @export var speed = 300.0
-@export var gravity = 200
-@export var jump_velocity = -7000.0
+@export var gravity = 500
+@export var jump_velocity = -700.0
 @export var acceleration = 2000
+
+var jumpTimeReseter: int = 3
+var timer = 3
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -26,17 +29,27 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 	# Add the gravity.
 		
-	if is_on_floor() and not ray_cast.is_colliding():
-		pivot.scale.x *= -1
+	if is_on_floor():
+		if timer <= 0:
+			velocity.y = jump_velocity
+			timer = jumpTimeReseter
+		if not ray_cast.is_colliding():
+			pivot.scale.x *= -1	
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	move_and_slide()
-	_jump()
 	
-	if wait_to_jump:
-		return 
+	timer -= 0.03
+	
+	
+	
+	#print(wait_to_jump)
+	#_jump()
+	#if wait_to_jump:
+		#return 
+	move_and_slide()
+	
+
 
 
 func _on_detection_body_entered(body: Node) -> void:
@@ -49,13 +62,20 @@ func _on_detection_body_exited(body: Node) -> void:
 	if body == target:
 		target = null
 
-func _jump() -> void:
-	if jump_cooldown.time_left:
-		return
-	wait_to_jump = true
-	if is_on_floor():
-		velocity.y = jump_velocity
-		
+#func _jump() -> void:
+	#
+	#if jump_cooldown.time_left:
+		##print(jump_cooldown.time_left)
+		#pass
+	#else:
+		#wait_to_jump = true
+		#print(wait_to_jump)
+		#if (is_on_floor()):
+		##if (is_on_floor() and jump_cooldown.timeout):
+			#print("jump")
+			#velocity.y = jump_velocity
+		#return
+		#
 
 func take_damage(damage: int):
 	queue_free()

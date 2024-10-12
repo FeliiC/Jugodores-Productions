@@ -33,7 +33,7 @@ func _on_restart_pressed() -> void:
 func _on_mainMenu_pressed() -> void:
 	get_tree().paused = false
 	#get_tree().change_scene_to_packed(menu)
-	MenuManager._go_to_menu()
+	Manager._go_to_menu()
 	
 func _on_quit_pressed() -> void:
 	get_tree().paused = false

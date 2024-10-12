@@ -19,7 +19,7 @@ extends Control
 
 func _ready() -> void:
 	start.pressed.connect(_on_start_pressed)
-	credits.pressed.connect(_on_credits_pressed)
+	#credits.pressed.connect(_on_credits_pressed)
 	
 	quit.pressed.connect(_on_quit_pressed)            #←
 	#quit.pressed.connect(func(): get_tree().quit())  #效果同上
@@ -35,9 +35,11 @@ func _on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(main)
 	
 	
-func _on_credits_pressed() -> void:
+#func _on_credits_pressed() -> void:
 	#get_tree().change_scene_to_file("res://credits.tscn")
-	MenuManager._go_to_credits()
+	
+	
+	#Manager._go_to_credits()
 	
 	
 func _on_quit_pressed() -> void:
