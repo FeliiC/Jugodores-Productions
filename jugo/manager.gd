@@ -11,7 +11,7 @@ func _go_to_menu() -> void:
 		return
 	get_tree().change_scene_to_packed(mainMenuScene)
 	
-func _go_to_credits() -> void:
-	if not creditsScene:
-		return
-	get_tree().change_scene_to_packed(creditsScene)
+#func _go_to_credits() -> void:
+	#if not creditsScene:
+		#return
+	#get_tree().change_scene_to_packed(creditsScene)

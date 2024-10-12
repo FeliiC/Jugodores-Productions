@@ -8,16 +8,13 @@
 size = Vector2(300, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_675rn"]
-size = Vector2(700, 40)
+size = Vector2(700, 44)
 
 [node name="Main" type="Node2D"]
 position = Vector2(723, 381)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_riqes")]
-position = Vector2(-74, 203)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
-position = Vector2(-505, 4)
+position = Vector2(353, -660)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -28,14 +25,30 @@ shape = SubResource("RectangleShape2D_0up5h")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(217, 299)
+position = Vector2(80, -109)
 shape = SubResource("RectangleShape2D_675rn")
 
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(986, -51)
+position = Vector2(-575, -61)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-507, -318)
+position = Vector2(-174, -447)
 
 [node name="jumping_enemy" parent="." instance=ExtResource("3_s5qy0")]
-position = Vector2(285, 170)
+position = Vector2(148, -238)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(243, 204)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(329, -764)
+shape = SubResource("RectangleShape2D_675rn")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
+position = Vector2(-672, -252)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-647, -154)
+shape = SubResource("RectangleShape2D_0up5h")

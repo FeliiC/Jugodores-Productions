@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://0jb360r63k25"]
+
+[ext_resource type="Script" path="res://victory_menu.gd" id="1_tsik6"]
+
+[node name="VictoryMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tsik6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -44.0
+offset_right = 134.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "You Win!"
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play It Again"
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menu"

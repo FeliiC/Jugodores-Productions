@@ -1,17 +1,21 @@
-class_name Player
 extends CharacterBody2D
 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var target: Player
+@onready var detection_area: Area2D = $DetectionArea
+
+func _ready() -> void:
+	detection_area.body_entered.connect(_on_detection_body_entered)
+	detection_area.body_exited.connect(_on_detection_body_exited)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -26,11 +30,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-
-func take_damage(damage: int):
-	queue_free()
-	get_tree().paused = true
-	get_tree().change_scene_to_file("res://failedMenu.tscn")
 	
 	
+	
+	
+func _on_detection_body_entered(body: Node) -> void:
+	var player = body as Player
+	if player:
+		target = player
+		
+
+func _on_detection_body_exited(body: Node) -> void:
+	if body == target:
+		target = null

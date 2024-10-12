@@ -28,6 +28,8 @@ shape = SubResource("RectangleShape2D_4bs77")
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+light_mask = 2
+visibility_layer = 2
 shape = SubResource("CircleShape2D_jhh0n")
 
 [node name="HurtBox" type="Area2D" parent="."]
