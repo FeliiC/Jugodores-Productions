@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://ed0ywlfuc1h4"]
 
 [ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="1_4u4nf"]
-[ext_resource type="Script" path="res://enemy.gd" id="1_nekew"]
-[ext_resource type="Script" path="res://hurt_box.gd" id="3_27qxi"]
-[ext_resource type="Script" path="res://hit_box.gd" id="4_mlln6"]
+[ext_resource type="Script" path="res://scenes/characters/enemies/enemy.gd" id="1_nekew"]
+[ext_resource type="Script" path="res://components/hurt_box.gd" id="3_27qxi"]
+[ext_resource type="Script" path="res://components/hit_box.gd" id="4_mlln6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
 size = Vector2(120, 120)

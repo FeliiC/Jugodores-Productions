@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cys4fiwwmp1fm"]
 
-[ext_resource type="Script" path="res://failed_menu.gd" id="1_dd8vv"]
+[ext_resource type="Script" path="res://ui/menus/failed_menu.gd" id="1_dd8vv"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_dd8vv")
