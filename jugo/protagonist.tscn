@@ -6,13 +6,52 @@
 [ext_resource type="Script" path="res://hit_box.gd" id="4_q8j5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfxbb"]
-size = Vector2(120, 120)
+size = Vector2(54, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27h1t"]
-size = Vector2(130, 130)
+size = Vector2(53, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq4s3"]
-size = Vector2(120, 20)
+size = Vector2(53, 14)
+
+[sub_resource type="Animation" id="Animation_uno44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_c88kb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_tn2m0"]
 resource_name = "idle"
@@ -56,45 +95,6 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_uno44"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_c88kb")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_23riw"]
 _data = {
 "RESET": SubResource("Animation_uno44"),
@@ -107,6 +107,7 @@ collision_mask = 3
 script = ExtResource("1_fwdmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 12)
 shape = SubResource("RectangleShape2D_vfxbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -120,6 +121,7 @@ collision_mask = 4
 script = ExtResource("3_kkym1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-6.5, 11.5)
 shape = SubResource("RectangleShape2D_27h1t")
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -128,7 +130,7 @@ collision_mask = 8
 script = ExtResource("4_q8j5s")
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -60)
+position = Vector2(-7, -25)
 shape = SubResource("RectangleShape2D_sq4s3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
