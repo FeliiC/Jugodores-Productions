@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://sljrlx85lp35"]
+
+[ext_resource type="Script" path="res://scenes/characters/enemies/follow_enemy.gd" id="1_kdthl"]
+[ext_resource type="Script" path="res://components/hurt_box.gd" id="2_t58a7"]
+[ext_resource type="Script" path="res://components/hit_box.gd" id="3_xpejo"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_0fxwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybmda"]
+size = Vector2(683, 619)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2gh"]
+size = Vector2(110, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ed1s"]
+size = Vector2(140, 129)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_kdthl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4bs77")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(10, -24)
+shape = SubResource("RectangleShape2D_ybmda")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_t58a7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_wc2gh")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_xpejo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_1ed1s")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Pivot"]
+position = Vector2(58, 55)
+target_position = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+modulate = Color(0.730448, 0.412201, 1, 0.721569)
+self_modulate = Color(1, 0, 1, 1)
+texture = ExtResource("4_0fxwy")
+
+[node name="JumpCooldown" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true

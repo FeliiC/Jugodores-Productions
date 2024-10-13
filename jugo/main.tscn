@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=12 format=3 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="2_3gt3h"]
 [ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://scenes/characters/enemies/jumping_enemy.tscn" id="3_s5qy0"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_equv4"]
+[ext_resource type="PackedScene" uid="uid://sljrlx85lp35" path="res://scenes/characters/enemies/follow_enemy.tscn" id="5_6xig0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -10,42 +12,132 @@ size = Vector2(300, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_675rn"]
 size = Vector2(700, 44)
 
+[sub_resource type="Curve2D" id="Curve2D_sph0d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -649, -156, 0, 0, 0, 0, -422, -210, 0, 0, 0, 0, -375, -316, 0, 0, 0, 0, -393, -425, 0, 0, 0, 0, -499, -482, 0, 0, 0, 0, -630, -507, 0, 0, 0, 0, -757, -474, 0, 0, 0, 0, -848, -410, 0, 0, 0, 0, -880, -298, 0, 0, 0, 0, -806, -207, 0, 0, 0, 0, -650, -160, 0, 0, 0, 0, -649, -156, 0, 0, 0, 0, -650, -160, 0, 0, 0, 0, -649, -156)
+}
+point_count = 14
+
+[sub_resource type="Animation" id="Animation_e7m8h"]
+resource_name = "Platform_move1"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_j8hai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_066f3"]
+_data = {
+"Platform_move1": SubResource("Animation_e7m8h"),
+"RESET": SubResource("Animation_j8hai")
+}
+
 [node name="Main" type="Node2D"]
 position = Vector2(723, 381)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-63, 89)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-501, 143)
 shape = SubResource("RectangleShape2D_0up5h")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(40, 144)
+scale = Vector2(5.4, 0.379)
+texture = ExtResource("4_equv4")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(217, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(80, -109)
 shape = SubResource("RectangleShape2D_675rn")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(52, -107)
+scale = Vector2(5, 0.351)
+texture = ExtResource("4_equv4")
+
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-575, -61)
+position = Vector2(-627, 62)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-174, -447)
+position = Vector2(-322, -338)
 
 [node name="jumping_enemy" parent="." instance=ExtResource("3_s5qy0")]
-position = Vector2(148, -238)
+position = Vector2(347, -237)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(243, 204)
+position = Vector2(180, 316)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-203, -84)
 shape = SubResource("RectangleShape2D_675rn")
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-744, -85)
+scale = Vector2(2.33594, 0.164063)
+texture = ExtResource("4_equv4")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
-position = Vector2(-647, -270)
+position = Vector2(18, 150)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(338, 371)
+curve = SubResource("Curve2D_sph0d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(-647, -154)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-649, -156)
+rotation = -0.233545
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/CharacterBody2D"]
+modulate = Color(0.532144, 0.504248, 0, 1)
+position = Vector2(2.08499, 2.03784)
+rotation = 0.233545
+scale = Vector2(2.33594, 0.164063)
+texture = ExtResource("4_equv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CharacterBody2D"]
+position = Vector2(1.48288, 2.40857)
+rotation = 0.233545
 shape = SubResource("RectangleShape2D_0up5h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
+libraries = {
+"": SubResource("AnimationLibrary_066f3")
+}
+autoplay = "Platform_move1"
+
+[node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
+position = Vector2(365, 142)
