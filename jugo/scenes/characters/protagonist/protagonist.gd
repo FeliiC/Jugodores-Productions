@@ -67,6 +67,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int):
 	queue_free()
 	get_tree().paused = true
-	get_tree().change_scene_to_file("res://failedMenu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://ui/menus/failedMenu.tscn")
+
 	
 	

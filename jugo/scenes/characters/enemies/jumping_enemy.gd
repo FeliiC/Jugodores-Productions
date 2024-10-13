@@ -4,7 +4,7 @@ var gravity = 1500
 var jump_speed = -1000
 var jumping = false
 var is_dead = false
-@onready var detection_area: Area2D = $DetectionArea
+#@onready var detection_area: Area2D = $DetectionArea
 var time_between_jumps = 1
 var jump_timer = 0.0
 
