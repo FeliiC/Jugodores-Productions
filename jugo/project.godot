@@ -56,10 +56,6 @@ pause={
 
 2d_physics/layer_1="Mundo"
 
-[layer_names]
-
-2d_physics/layer_1="Mundo"
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
