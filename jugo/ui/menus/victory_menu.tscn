@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://0jb360r63k25"]
 
-[ext_resource type="Script" path="res://victory_menu.gd" id="1_tsik6"]
+[ext_resource type="Script" path="res://ui/menus/victory_menu.gd" id="1_tsik6"]
 
 [node name="VictoryMenu" type="CanvasLayer"]
 process_mode = 3
