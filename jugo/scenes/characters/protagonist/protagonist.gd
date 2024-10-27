@@ -16,7 +16,7 @@ extends CharacterBody2D
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if not is_on_floor():					
 		velocity.y += gravity * delta
 	var move_input = Input.get_axis("move_left", "move_right")
 	if attacking:
