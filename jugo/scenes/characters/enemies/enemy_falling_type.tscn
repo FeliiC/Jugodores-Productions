@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://di5v2tm5ld384"]
+[gd_scene load_steps=8 format=3 uid="uid://di5v2tm5ld384"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy_falling_type.gd" id="1_y6k1v"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="2_nnu2r"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_n6xb2"]
 [ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_a1440"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q6qsx"]
-radius = 330.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2isca"]
 size = Vector2(120, 120)
@@ -22,8 +19,11 @@ script = ExtResource("1_y6k1v")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("CircleShape2D_q6qsx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectionArea"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(2, 3)
+polygon = PackedVector2Array(0, -65, -200, 600, 200, 600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2isca")

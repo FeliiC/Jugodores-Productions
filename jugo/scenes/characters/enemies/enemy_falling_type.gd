@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var fall_velocity = 400.0
+var gravity = 400
+var state = false
+@onready var random_value: int = 50
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -14,32 +16,42 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if is_on_floor():
+		queue_free()
 
+	#if (not target) and (not is_on_ceiling())
+	if (not target):
+		velocity.y = move_toward(velocity.y,-1*fall_velocity, delta)
+		#var direction = pivot.scale.x
+		#velocity.x = move_toward(velocity.x, direction * speed, acceleration * delt
+	elif target:
+		_random_way()
+		velocity.y = move_toward(velocity.y, gravity*3+random_value, delta)
+		#var direction = global_position.direction_to(target.global_position)
+		#velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 	
-	
-	
+
+func _random_way(max: int = 70, min: int = -10) -> void:
+	if state == false:
+		return
+	else:
+		var value = randi() % (max-min+1) + min
+		random_value += value
 	
 func _on_detection_body_entered(body: Node) -> void:
 	var player = body as Player
 	if player:
 		target = player
+		state = true
 		
 
 func _on_detection_body_exited(body: Node) -> void:
 	if body == target:
 		target = null
+		state= false

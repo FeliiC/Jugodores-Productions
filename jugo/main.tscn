@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=14 format=3 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="2_3gt3h"]
 [ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://scenes/characters/enemies/jumping_enemy.tscn" id="3_s5qy0"]
 [ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_equv4"]
 [ext_resource type="PackedScene" uid="uid://sljrlx85lp35" path="res://scenes/characters/enemies/follow_enemy.tscn" id="5_6xig0"]
+[ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="6_qtuio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -55,6 +56,9 @@ _data = {
 "Platform_move1": SubResource("Animation_e7m8h"),
 "RESET": SubResource("Animation_j8hai")
 }
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwxyb"]
+distance = -570.0
 
 [node name="Main" type="Node2D"]
 position = Vector2(723, 381)
@@ -141,3 +145,10 @@ autoplay = "Platform_move1"
 
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
 position = Vector2(365, 142)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("6_qtuio")]
+position = Vector2(-141, -252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vwxyb")
