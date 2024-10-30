@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cidaqs8xebjvg"]
+
+[ext_resource type="Script" path="res://ui/Items/ui_item.gd" id="1_pojq3"]
+[ext_resource type="Texture2D" uid="uid://bwkl0olcjg2tj" path="res://assets/items/key_32x32_24f.png" id="2_aragx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sno22"]
+atlas = ExtResource("2_aragx")
+region = Rect2(733.361, -0.000751495, 34.7826, 31.9584)
+
+[node name="UIItem" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pojq3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = SubResource("AtlasTexture_sno22")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Item"

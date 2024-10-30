@@ -41,6 +41,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			playback.travel("fall")
 
+func pickup(item: String):
+	print("Item!!")
+	InventoryManager.add_item(item)
 
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.

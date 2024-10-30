@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3tthofwryig6"]
+
+[ext_resource type="Texture2D" uid="uid://vcrvn3im6jh0" path="res://assets/tilesets/cielo/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" id="1_dh5oo"]
+[ext_resource type="Texture2D" uid="uid://ddj2dp031ves5" path="res://assets/tilesets/cielo/Mountain Dusk/version B/Layers/myst.png" id="2_taby6"]
+[ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="3_u3h2d"]
+[ext_resource type="Texture2D" uid="uid://dlyqkimemn4rn" path="res://assets/tilesets/cielo/Mountain Dusk/Version C/layers/clouds.png" id="4_8746x"]
+[ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://scenes/characters/enemies/jumping_enemy.tscn" id="4_qysv5"]
+[ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="5_e3xki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx0ca"]
+size = Vector2(282.749, 21.4951)
+
+[node name="tutorial" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.07, 0)
+repeat_size = Vector2(1150, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(4.23538, 4.05018)
+texture = ExtResource("1_dh5oo")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(1150, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(0, 550)
+scale = Vector2(0.903125, 0.9)
+texture = ExtResource("4_8746x")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(1150, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(287.5, 550)
+scale = Vector2(0.903125, 0.9)
+texture = ExtResource("4_8746x")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(1150, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(575, 550)
+scale = Vector2(0.903125, 0.9)
+texture = ExtResource("4_8746x")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(1150, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Parallax2D5"]
+position = Vector2(862.5, 550)
+scale = Vector2(0.903125, 0.9)
+texture = ExtResource("4_8746x")
+centered = false
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_u3h2d")]
+position = Vector2(2394, 544)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(223, -257)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-1089, 86)
+scale = Vector2(2.67235, 1.05902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(567.774, 568.896)
+rotation = -3.14159
+scale = Vector2(1.12725, -0.713124)
+shape = SubResource("RectangleShape2D_tx0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(568, 457)
+texture = ExtResource("2_taby6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-234, 86)
+scale = Vector2(2.67235, 1.05902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(567.774, 568.896)
+rotation = -3.14159
+scale = Vector2(1.12725, -0.713124)
+shape = SubResource("RectangleShape2D_tx0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(568, 457)
+texture = ExtResource("2_taby6")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(621, 86)
+scale = Vector2(2.67235, 1.05902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(567.774, 568.896)
+rotation = -3.14159
+scale = Vector2(1.12725, -0.713124)
+shape = SubResource("RectangleShape2D_tx0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(568, 457)
+texture = ExtResource("2_taby6")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(1474, 86)
+scale = Vector2(2.67235, 1.05902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(567.774, 568.896)
+rotation = -3.14159
+scale = Vector2(1.12725, -0.713124)
+shape = SubResource("RectangleShape2D_tx0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(568, 457)
+texture = ExtResource("2_taby6")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(2329, 86)
+scale = Vector2(2.67235, 1.05902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(567.774, 568.896)
+rotation = -3.14159
+scale = Vector2(1.12725, -0.713124)
+shape = SubResource("RectangleShape2D_tx0ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6"]
+position = Vector2(568, 457)
+texture = ExtResource("2_taby6")
+
+[node name="jumping_enemy" parent="." instance=ExtResource("4_qysv5")]
+position = Vector2(3919, 478)
+
+[node name="Enemy" parent="." instance=ExtResource("5_e3xki")]
+position = Vector2(83, 572)
