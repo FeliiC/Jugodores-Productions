@@ -4,7 +4,7 @@ extends CharacterBody2D
 var fall_velocity = 400.0
 var gravity = 400
 var state = false
-@onready var random_value: int = 50
+@onready var random_value: int = 500
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, direction * speed, acceleration * delt
 	elif target:
 		_random_way()
-		velocity.y = move_toward(velocity.y, gravity*3+random_value, delta)
+		velocity.y = move_toward(velocity.y, gravity*30+random_value, delta)
 		#var direction = global_position.direction_to(target.global_position)
 		#velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 	# Handle jump.
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func _random_way(max: int = 70, min: int = -10) -> void:
+func _random_way(max: int = 700, min: int = -100) -> void:
 	if state == false:
 		return
 	else:

@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://scenes/characters/enemies/jumping_enemy.tscn" id="3_s5qy0"]
 [ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_equv4"]
 [ext_resource type="PackedScene" uid="uid://sljrlx85lp35" path="res://scenes/characters/enemies/follow_enemy.tscn" id="5_6xig0"]
-[ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="6_qtuio"]
+
+[ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="6_j0i3t"]
+[ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="7_yob64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -146,9 +148,21 @@ autoplay = "Platform_move1"
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
 position = Vector2(365, 142)
 
+<<<<<<< HEAD
 [node name="CharacterBody2D2" parent="." instance=ExtResource("6_qtuio")]
 position = Vector2(-141, -252)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_vwxyb")
+=======
+[node name="Pickable" parent="." instance=ExtResource("6_j0i3t")]
+position = Vector2(131, 172)
+display_name = "Key"
+
+[node name="Pickable2" parent="." instance=ExtResource("6_j0i3t")]
+position = Vector2(117, -268)
+display_name = "Key"
+
+[node name="UIInventory" parent="." instance=ExtResource("7_yob64")]
+>>>>>>> 9153a8a68eacfb71a533a56f572ff1d96a6447ff
