@@ -12,6 +12,7 @@ extends Control
 @onready var start: Button = %Start
 @onready var credits: Button = %Credits
 @onready var quit: Button = %Quit
+@onready var sample: Button = %Sample
 
 #var main = preload("res://main.tscn")  #方法1
 @export var main: PackedScene
@@ -20,7 +21,7 @@ extends Control
 func _ready() -> void:
 	start.pressed.connect(_on_start_pressed)
 	#credits.pressed.connect(_on_credits_pressed)
-	
+	sample.pressed.connect(_on_sample_pressed)
 	quit.pressed.connect(_on_quit_pressed)            #←
 	#quit.pressed.connect(func(): get_tree().quit())  #效果同上
 	#quit.pressed.connect(get_tree().quit）        #效果同上
@@ -44,3 +45,7 @@ func _on_start_pressed() -> void:
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	
+
+func _on_sample_pressed() -> void:
+	Manager._go_to_sample_level()

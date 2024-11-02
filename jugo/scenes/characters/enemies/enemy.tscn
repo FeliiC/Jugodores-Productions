@@ -18,6 +18,7 @@ size = Vector2(110, 20)
 size = Vector2(140, 129)
 
 [node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nekew")

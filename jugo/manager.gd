@@ -4,6 +4,7 @@ extends Node
 @export var creditsScene: PackedScene
 @export var failedMenuScene: PackedScene
 @export var victoryMenuScene: PackedScene
+@export var sampleScene: PackedScene
 @export var num: int = 0
 # Called when the node enters the scene tree for the first time.
 
@@ -29,3 +30,7 @@ func _go_to_victory_menu() -> void:
 	get_tree().change_scene_to_packed(victoryMenuScene)
 	
 #func _go_to_main() -> void:
+func _go_to_sample_level() -> void:
+	if not sampleScene:
+		return
+	get_tree().change_scene_to_packed(sampleScene)

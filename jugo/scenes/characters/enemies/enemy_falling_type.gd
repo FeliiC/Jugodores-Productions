@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 var fall_velocity = 400.0
-var gravity = 400
+var gravity = 300
 var state = false
-@onready var random_value: int = 500
+@onready var random_value: int = 20
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -21,12 +21,12 @@ func _physics_process(delta: float) -> void:
 
 	#if (not target) and (not is_on_ceiling())
 	if (not target):
-		velocity.y = move_toward(velocity.y,-1*fall_velocity, delta)
+		velocity.y = move_toward(velocity.y,-1*fall_velocity, 0)
 		#var direction = pivot.scale.x
 		#velocity.x = move_toward(velocity.x, direction * speed, acceleration * delt
 	elif target:
 		_random_way()
-		velocity.y = move_toward(velocity.y, gravity*30+random_value, delta)
+		velocity.y = move_toward(velocity.y, gravity+random_value, 4000)
 		#var direction = global_position.direction_to(target.global_position)
 		#velocity.x = move_toward(velocity.x, direction.x * speed, acceleration * delta)
 	# Handle jump.
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func _random_way(max: int = 700, min: int = -100) -> void:
+func _random_way(max: int = 80, min: int = -30) -> void:
 	if state == false:
 		return
 	else:
@@ -55,3 +55,7 @@ func _on_detection_body_exited(body: Node) -> void:
 	if body == target:
 		target = null
 		state= false
+		
+
+func take_damage(damage: int):
+	queue_free()
