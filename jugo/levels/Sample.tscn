@@ -338,7 +338,7 @@ tile_map_data = PackedByteArray("AAAAAAoAAAACAAAAAAABAAoAAAABAAAAAAACAAoAAAACAAA
 tile_set = SubResource("TileSet_t7moc")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_3ul3w")]
-position = Vector2(1476, -1371)
+position = Vector2(-107, 585)
 
 [node name="FallingEnemy" parent="." instance=ExtResource("3_vngyc")]
 position = Vector2(87, 212)

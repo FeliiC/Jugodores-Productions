@@ -32,7 +32,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_safkg")
-text = "Game Name"
+text = "Keep A Cool Head"
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true

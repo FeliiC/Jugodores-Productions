@@ -148,17 +148,6 @@ autoplay = "Platform_move1"
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
 position = Vector2(365, 142)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[node name="CharacterBody2D2" parent="." instance=ExtResource("6_qtuio")]
-position = Vector2(-141, -252)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_vwxyb")
-=======
-=======
->>>>>>> enemyPart
 [node name="Pickable" parent="." instance=ExtResource("6_j0i3t")]
 position = Vector2(131, 172)
 display_name = "Key"
@@ -168,9 +157,6 @@ position = Vector2(117, -268)
 display_name = "Key"
 
 [node name="UIInventory" parent="." instance=ExtResource("7_yob64")]
-<<<<<<< HEAD
->>>>>>> 9153a8a68eacfb71a533a56f572ff1d96a6447ff
-=======
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("8_niy06")]
 position = Vector2(-124, -512)
