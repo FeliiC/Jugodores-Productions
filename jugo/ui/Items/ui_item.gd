@@ -5,4 +5,3 @@ extends HBoxContainer
 
 func setup(item :String, num: int):
 	label.text = str(num)
-	

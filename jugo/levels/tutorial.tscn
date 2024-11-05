@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://d3tthofwryig6"]
+[gd_scene load_steps=13 format=4 uid="uid://d3tthofwryig6"]
 
 [ext_resource type="Texture2D" uid="uid://vcrvn3im6jh0" path="res://assets/tilesets/cielo/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" id="1_dh5oo"]
 [ext_resource type="Texture2D" uid="uid://ddj2dp031ves5" path="res://assets/tilesets/cielo/Mountain Dusk/version B/Layers/myst.png" id="2_taby6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1q6y6b5lck3w" path="res://components/kill_zone.tscn" id="6_8p0fu"]
 [ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="7_e2qb5"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="8_n6q0q"]
+[ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="9_ei2th"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xknc1"]
 texture = ExtResource("2_taby6")
@@ -157,7 +158,7 @@ texture = ExtResource("4_8746x")
 centered = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_u3h2d")]
-position = Vector2(92, 623)
+position = Vector2(128, 607)
 
 [node name="jumping_enemy" parent="." instance=ExtResource("4_qysv5")]
 position = Vector2(1784, 586)
@@ -174,10 +175,10 @@ position = Vector2(378, 135)
 shape = SubResource("RectangleShape2D_fbwti")
 
 [node name="FallingEnemy" parent="." instance=ExtResource("7_e2qb5")]
-position = Vector2(695, 414)
+position = Vector2(666, 458)
 
 [node name="FallingEnemy2" parent="." instance=ExtResource("7_e2qb5")]
-position = Vector2(1090, 412)
+position = Vector2(1128, 459)
 
 [node name="Pickable" parent="." instance=ExtResource("8_n6q0q")]
 position = Vector2(3540, 563)
@@ -187,3 +188,5 @@ position = Vector2(3888, 569)
 
 [node name="Pickable3" parent="." instance=ExtResource("8_n6q0q")]
 position = Vector2(4256, 567)
+
+[node name="UIInventory" parent="." instance=ExtResource("9_ei2th")]
