@@ -456,3 +456,11 @@ position = Vector2(604, 394)
 
 [node name="EnemyWithPickable2" parent="." instance=ExtResource("12_pmr2o")]
 position = Vector2(-196, -624)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -228.0
+offset_top = 480.0
+offset_right = 6.0
+offset_bottom = 503.0
+text = "You need to  get 3 keys to win.
+                  Good luck!"
