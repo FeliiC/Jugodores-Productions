@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-var fall_velocity = 400.0
-var gravity = 400
+var fall_velocity = 300.0
+var gravity = 300
 var state = false
 @onready var random_value: int = 50
 
