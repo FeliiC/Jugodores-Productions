@@ -9,7 +9,7 @@ extends Control
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
-@onready var start: Button = %Start
+#@onready var start: Button = %Start
 @onready var credits: Button = %Credits
 @onready var quit: Button = %Quit
 @onready var sample: Button = %Sample
@@ -19,7 +19,7 @@ extends Control
 
 
 func _ready() -> void:
-	start.pressed.connect(_on_start_pressed)
+	#start.pressed.connect(_on_start_pressed)
 	#credits.pressed.connect(_on_credits_pressed)
 	sample.pressed.connect(_on_sample_pressed)
 	quit.pressed.connect(_on_quit_pressed)            #←

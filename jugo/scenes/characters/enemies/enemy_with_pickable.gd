@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var gravity = 1300
 @export var jump_velocity = -550.0
 @export var acceleration = 2000
+@export var pickable_item: PackedScene = null
 
 var jumpTimeReseter: int = 3
 var timer = 3
@@ -14,6 +15,7 @@ var target: Player
 @onready var pivot: Node2D = $Pivot
 @onready var ray_cast: RayCast2D = $Pivot/RayCast2D
 @onready var jump_cooldown: Timer = $JumpCooldown
+
 
 func _ready() -> void:
 	detection_area.body_entered.connect(_on_detection_body_entered)
@@ -84,4 +86,8 @@ func _on_detection_body_exited(body: Node) -> void:
 		#
 
 func take_damage(damage: int):
+	if pickable_item:
+		var item_instance = pickable_item.instantiate()
+		item_instance.global_position = global_position
+		get_tree().current_scene.add_child(item_instance)
 	queue_free()

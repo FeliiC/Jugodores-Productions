@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @export var speed = 400
 @export var jump_speed = 750
-@export var gravity = 1500
+@export var gravity = 2000
 @export var acceleration = 2000
 @export var attacking = false
 @onready var pivot: Node2D = $Pivot
@@ -30,6 +30,12 @@ func _physics_process(delta: float) -> void:
 	if move_input != 0:
 		pivot.scale.x = sign(move_input)
 	
+	if InventoryManager.num >= 3:
+		InventoryManager.num = 0
+		get_tree().paused = true
+		Manager._go_to_victory_menu()
+		
+	
 	if is_on_floor():
 		if abs(velocity.x) > 10 or move_input:
 			playback.travel("run")
@@ -40,6 +46,8 @@ func _physics_process(delta: float) -> void:
 			playback.travel("jump")
 		else:
 			playback.travel("fall")
+
+
 
 func pickup(item: String):
 	print("Item!!")
@@ -68,6 +76,7 @@ func pickup(item: String):
 
 
 func take_damage(damage: int):
+	InventoryManager.num = 0
 	queue_free()
 	get_tree().paused = true
 	Manager._go_to_failed_menu()

@@ -12,8 +12,8 @@ func on_body_entered(body: Node) -> void:
 	if player: #si en efecto entr+o un player...
 		#AudioManager.something
 		player.pickup(display_name) #player se da cuenta de que lo tomó y ve cuál item es
+		InventoryManager.num += 1
 		queue_free() #desaparece el item del mundo (ahora estará en el inventario)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
