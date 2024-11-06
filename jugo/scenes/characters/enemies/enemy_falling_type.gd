@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 var fall_velocity = 400.0
-var gravity = 300
+var gravity = 400
 var state = false
-@onready var random_value: int = 20
+@onready var random_value: int = 50
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func _random_way(max: int = 80, min: int = -30) -> void:
+func _random_way(max: int = 350, min: int = -70) -> void:
 	if state == false:
 		return
 	else:

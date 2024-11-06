@@ -30,6 +30,9 @@ func _on_body_entered(body: Node):
 	if body.name == "Player":
 		die()
 
+func take_damage(damage: int):
+	queue_free()
+	
 func die():
 	if not is_dead:
 		is_dead = true
