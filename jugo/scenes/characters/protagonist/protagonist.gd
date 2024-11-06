@@ -6,7 +6,7 @@ extends CharacterBody2D
 #const JUMP_VELOCITY = -400.0
 
 @export var speed = 400
-@export var jump_speed = 700
+@export var jump_speed = 750
 @export var gravity = 1500
 @export var acceleration = 2000
 @export var attacking = false

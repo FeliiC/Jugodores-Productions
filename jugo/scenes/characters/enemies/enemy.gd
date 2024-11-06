@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @export var wait_to_jump = false
-@export var speed = 300.0
-@export var gravity = 500
-@export var jump_velocity = -700.0
+@export var speed = 200.0
+@export var gravity = 1300
+@export var jump_velocity = -550.0
 @export var acceleration = 2000
 
 var jumpTimeReseter: int = 3
