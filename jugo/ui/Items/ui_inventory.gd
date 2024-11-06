@@ -7,6 +7,8 @@ extends CanvasLayer
 
 var keysNum : int = 0
 
+signal keys_full() #señal que se emite cuando ya se consiguieron todas las llaves del nivel
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InventoryManager.inventory_changed.connect(on_inventory_changed)
@@ -35,3 +37,7 @@ func _add_item(item: String):
 	ui_item_inst.setup(item, keysNum) #setup se encarga de armar el item. Debe ir después de insertarlo en el mundo (con addChild) o es nulo
 	
 	
+	
+func victory(nombre_item: String) -> void:
+	if keysNum == 2: #2 por ahora
+		emit_signal("keys_full")
