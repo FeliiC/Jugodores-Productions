@@ -14,6 +14,9 @@ extends CharacterBody2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 
+@onready var ui_inventory: CanvasLayer = $"../UIInventory"
+
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -30,10 +33,10 @@ func _physics_process(delta: float) -> void:
 	if move_input != 0:
 		pivot.scale.x = sign(move_input)
 	
-	if InventoryManager.num >= 3:
-		InventoryManager.num = 0
-		get_tree().paused = true
-		Manager._go_to_victory_menu()
+	#if ui_inventory.keysNum >= 3:
+		##InventoryManager.num = 0
+		#get_tree().paused = true
+		#Manager._go_to_victory_menu()
 		
 	
 	if is_on_floor():
