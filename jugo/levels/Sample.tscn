@@ -464,3 +464,4 @@ offset_right = 6.0
 offset_bottom = 503.0
 text = "You need to  get 3 keys to win.
                   Good luck!"
+metadata/_edit_use_anchors_ = true

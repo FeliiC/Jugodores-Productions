@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var fall_velocity = 300.0
+var fall_velocity = 150.0
 var gravity = 300
 var state = false
 @onready var random_value: int = 50
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
-	move_and_slide()
+	move_and_collide(delta*velocity)
 	
 
 func _random_way(max: int = 350, min: int = -70) -> void:

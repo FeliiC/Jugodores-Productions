@@ -13,10 +13,10 @@ size = Vector2(120, 120)
 radius = 330.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2gh"]
-size = Vector2(110, 20)
+size = Vector2(128.571, 24.2857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ed1s"]
-size = Vector2(140, 129)
+size = Vector2(125.714, 123.286)
 
 [node name="EnemyWithPickable" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
@@ -41,7 +41,8 @@ collision_mask = 8
 script = ExtResource("2_sepfr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 60)
+position = Vector2(4.51292e-06, 59.2857)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_wc2gh")
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -50,7 +51,8 @@ collision_mask = 4
 script = ExtResource("3_yfpqk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -5.5)
+position = Vector2(-2.17131e-06, -2.64286)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1ed1s")
 
 [node name="Pivot" type="Node2D" parent="."]
