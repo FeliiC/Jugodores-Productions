@@ -15,6 +15,7 @@ var target: Player
 @onready var pivot: Node2D = $Pivot
 @onready var ray_cast: RayCast2D = $Pivot/RayCast2D
 @onready var jump_cooldown: Timer = $JumpCooldown
+@onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
 
 
 func _ready() -> void:
@@ -86,6 +87,7 @@ func _on_detection_body_exited(body: Node) -> void:
 		#
 
 func take_damage(damage: int):
+	kill_enemy_sound.play()
 	if pickable_item:
 		var item_instance = pickable_item.instantiate()
 		item_instance.global_position = global_position

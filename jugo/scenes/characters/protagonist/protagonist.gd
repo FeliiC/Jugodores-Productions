@@ -15,6 +15,8 @@ extends CharacterBody2D
 @onready var playback = animation_tree.get("parameters/playback")
 
 @onready var ui_inventory: CanvasLayer = $"../UIInventory"
+@onready var jump_sound: AudioStreamPlayer2D = $Jump_sound
+@onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
 
 
 
@@ -28,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -jump_speed
+		jump_sound.play()
 	move_and_slide()
 	
 	if move_input != 0:

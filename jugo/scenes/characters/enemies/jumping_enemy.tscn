@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp1shbul5kd5s"]
+[gd_scene load_steps=9 format=3 uid="uid://bp1shbul5kd5s"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemies/jumping_enemy.gd" id="1_avnu5"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="2_wrrrt"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://assets/icon.svg" id="2_wrrrt"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_lk0yw"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="4_25kg2"]
+[ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="5_wwq8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vykec"]
 
@@ -53,3 +54,6 @@ light_mask = 8
 visibility_layer = 8
 position = Vector2(-0.125155, 8.73169)
 shape = SubResource("RectangleShape2D_4dlup")
+
+[node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wwq8w")
