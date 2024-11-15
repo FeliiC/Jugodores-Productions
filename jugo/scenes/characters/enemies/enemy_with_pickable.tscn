@@ -52,7 +52,6 @@ script = ExtResource("3_yfpqk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-2.17131e-06, -2.64286)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1ed1s")
 
 [node name="Pivot" type="Node2D" parent="."]
