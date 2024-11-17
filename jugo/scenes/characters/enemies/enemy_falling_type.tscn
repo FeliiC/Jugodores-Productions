@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy_falling_type.gd" id="1_y6k1v"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_n6xb2"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="4_6pr05"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://assets/icon.svg" id="4_a1440"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_a1440"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2isca"]
 size = Vector2(120, 120)

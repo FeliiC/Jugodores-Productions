@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="2_sepfr"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="2_ypo0h"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_yfpqk"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://assets/icon.svg" id="4_1uldq"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_1uldq"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="6_2mxaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
