@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgiwmvqioc0xs"
+path="res://.godot/imported/lvl_music(test).mp3-955e817c792edff98acd05edcebb73a2.mp3str"
+
+[deps]
+
+source_file="res://assets/Basic sound test/music/lvl_music(test).mp3"
+dest_files=["res://.godot/imported/lvl_music(test).mp3-955e817c792edff98acd05edcebb73a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

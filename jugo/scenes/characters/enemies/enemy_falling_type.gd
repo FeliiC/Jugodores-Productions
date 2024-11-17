@@ -5,6 +5,8 @@ var fall_velocity = 150.0
 var gravity = 300
 var state = false
 @onready var random_value: int = 50
+@onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
+
 
 var target: Player
 @onready var detection_area: Area2D = $DetectionArea
@@ -58,4 +60,5 @@ func _on_detection_body_exited(body: Node) -> void:
 		
 
 func take_damage(damage: int):
+	kill_enemy_sound.play()
 	queue_free()

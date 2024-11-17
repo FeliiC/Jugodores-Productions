@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
 
 var gravity = 1500
 var jump_speed = -1000
@@ -31,6 +32,7 @@ func _on_body_entered(body: Node):
 		die()
 
 func take_damage(damage: int):
+	kill_enemy_sound.play()
 	queue_free()
 	
 func die():

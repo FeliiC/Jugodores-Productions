@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kjih7ym5xyj1"
+path="res://.godot/imported/Kill_enemy_sound(test).ogg-d93a912e986170bc7ea08f8a8e8cdea7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg"
+dest_files=["res://.godot/imported/Kill_enemy_sound(test).ogg-d93a912e986170bc7ea08f8a8e8cdea7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

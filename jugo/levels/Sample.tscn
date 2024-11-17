@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bgv3xx76tr1hg"]
+[gd_scene load_steps=31 format=4 uid="uid://bgv3xx76tr1hg"]
 
 [ext_resource type="Texture2D" uid="uid://bwkenedhrnn6p" path="res://assets/tilesets/bosque/oak_woods_v1.0/oak_woods_tileset.png" id="1_3kyqt"]
 [ext_resource type="Script" path="res://levels/sample.gd" id="1_y14xy"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://6lhpm754uxot" path="res://assets/tilesets/cielo/cloud_Platform.png" id="10_2v31e"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="11_ub5hb"]
 [ext_resource type="PackedScene" uid="uid://goijfgapioj5" path="res://scenes/characters/enemies/enemy_with_pickable.tscn" id="12_pmr2o"]
+[ext_resource type="AudioStream" uid="uid://cgiwmvqioc0xs" path="res://assets/Basic sound test/music/lvl_music(test).mp3" id="13_cd02u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8gnd"]
 texture = ExtResource("1_3kyqt")
@@ -465,3 +466,9 @@ offset_bottom = 503.0
 text = "You need to  get 3 keys to win.
                   Good luck!"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_cd02u")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
