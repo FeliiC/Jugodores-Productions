@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=17 format=3 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="2_3gt3h"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="7_yob64"]
 [ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="8_niy06"]
 [ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="9_ksy2b"]
+[ext_resource type="PackedScene" uid="uid://cqsp7oev44fte" path="res://scenes/interactive/box_cb.tscn" id="10_wwhem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -92,13 +93,13 @@ scale = Vector2(5, 0.351)
 texture = ExtResource("4_equv4")
 
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-627, 62)
+position = Vector2(262, 95)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-322, -338)
+position = Vector2(526, -375)
 
 [node name="jumping_enemy" parent="." instance=ExtResource("3_s5qy0")]
-position = Vector2(347, -237)
+position = Vector2(357, -242)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(180, 316)
@@ -146,7 +147,7 @@ libraries = {
 autoplay = "Platform_move1"
 
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
-position = Vector2(365, 142)
+position = Vector2(657, -305)
 
 [node name="Pickable" parent="." instance=ExtResource("6_j0i3t")]
 position = Vector2(131, 172)
@@ -162,3 +163,9 @@ display_name = "Key"
 position = Vector2(-124, -512)
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_ksy2b")]
+
+[node name="BoxCB" parent="." instance=ExtResource("10_wwhem")]
+position = Vector2(149, 89)
+
+[node name="BoxCB2" parent="." instance=ExtResource("10_wwhem")]
+position = Vector2(12, -257)

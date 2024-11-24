@@ -577,6 +577,9 @@ texture = ExtResource("6_6t721")
 hframes = 4
 vframes = 5
 
+[node name="DetectBox" type="RayCast2D" parent="Pivot"]
+target_position = Vector2(34, 0)
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_y2hb8")
 anim_player = NodePath("../AnimationPlayer")

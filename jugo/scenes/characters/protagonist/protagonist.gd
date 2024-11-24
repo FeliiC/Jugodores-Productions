@@ -18,6 +18,8 @@ extends CharacterBody2D
 @onready var jump_sound: AudioStreamPlayer2D = $Jump_sound
 @onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
 
+@onready var detect_box: RayCast2D = $Pivot/DetectBox
+
 
 
 func _physics_process(delta: float) -> void:
@@ -52,6 +54,19 @@ func _physics_process(delta: float) -> void:
 			playback.travel("jump")
 		else:
 			playback.travel("fall")
+			
+	
+	if detect_box.is_colliding():
+		print("veo una cajita")
+		var collider = detect_box.get_collider()
+		if collider.is_in_group("pusheable"):
+			print("empujo cajita")
+			#collider.direction = 1*sign(move_input)
+			var direction = global_position.direction_to(collider.global_position).normalized()
+			#collider.velocity += direction * 500
+			collider.velocity = collider.velocity.lerp(direction * 1000, 0.1)
+			collider.move_and_slide()
+			
 
 
 
