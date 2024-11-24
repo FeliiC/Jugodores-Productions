@@ -169,4 +169,4 @@ position = Vector2(605, -380)
 position = Vector2(515, -186)
 
 [node name="Box2" parent="." instance=ExtResource("11_bfx8i")]
-position = Vector2(217, 156)
+position = Vector2(145, 146)
