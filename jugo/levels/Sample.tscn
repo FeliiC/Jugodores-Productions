@@ -372,7 +372,7 @@ position = Vector2(1641, 590)
 [node name="PauseMenu" parent="." instance=ExtResource("7_v1slr")]
 
 [node name="spawnPoint" type="Marker2D" parent="."]
-position = Vector2(-107, 554)
+position = Vector2(-110, 585)
 gizmo_extents = 55.0
 
 [node name="Platform1" type="Path2D" parent="."]

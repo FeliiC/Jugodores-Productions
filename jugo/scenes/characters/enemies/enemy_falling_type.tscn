@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy_falling_type.gd" id="1_y6k1v"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_n6xb2"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="4_6pr05"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://assets/icon.svg" id="4_a1440"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_a1440"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2isca"]
 size = Vector2(120, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpxo6"]
-size = Vector2(125.714, 101.429)
+size = Vector2(122, 118)
 
 [node name="FallingEnemy" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
@@ -34,10 +34,10 @@ collision_mask = 4
 script = ExtResource("3_n6xb2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(1.87329e-06, -12.1429)
 shape = SubResource("RectangleShape2D_gpxo6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.0313726, 1, 1, 1)
 self_modulate = Color(1, 0, 1, 1)
 texture = ExtResource("4_a1440")
