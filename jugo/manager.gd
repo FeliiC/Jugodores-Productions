@@ -7,7 +7,7 @@ extends Node
 @export var sampleScene: PackedScene
 @export var num: int = 0
 # Called when the node enters the scene tree for the first time.
-
+@export var levels: Array[LevelInfo]
 
 func _go_to_menu() -> void:
 	if not mainMenuScene:

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GatheringQuest" load_steps=2 format=3 uid="uid://d4dbr55ducrpp"]
+
+[ext_resource type="Script" path="res://resources/gathering_quest.gd" id="1_r4twx"]
+
+[resource]
+script = ExtResource("1_r4twx")
+thing = "Keys"
+title = "collect, collect, collect"
+description = "Recolecta las llaves necesarias para pasar de nivel"

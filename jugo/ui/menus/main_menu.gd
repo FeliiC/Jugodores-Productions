@@ -13,6 +13,7 @@ extends Control
 @onready var credits: Button = %Credits
 @onready var quit: Button = %Quit
 @onready var sample: Button = %Sample
+@onready var levels = %Levels
 
 #var main = preload("res://main.tscn")  #方法1
 @export var main: PackedScene
@@ -25,7 +26,7 @@ func _ready() -> void:
 	quit.pressed.connect(_on_quit_pressed)            #←
 	#quit.pressed.connect(func(): get_tree().quit())  #效果同上
 	#quit.pressed.connect(get_tree().quit）        #效果同上
-
+	levels.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/menus/levels_menu.tscn"))
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(main)
 	#get_tree().change_scene_to_file("res://main.tscn") #方法3(与方法1，方法2的缺点一样，
