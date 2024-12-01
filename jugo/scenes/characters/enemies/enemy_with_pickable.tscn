@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://goijfgapioj5"]
+[gd_scene load_steps=12 format=3 uid="uid://goijfgapioj5"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy_with_pickable.gd" id="1_d7ys8"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="2_sepfr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_yfpqk"]
 [ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_1uldq"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="6_2mxaw"]
+[ext_resource type="Texture2D" uid="uid://bwkl0olcjg2tj" path="res://assets/items/key_32x32_24f.png" id="7_yxalu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
 size = Vector2(120, 120)
@@ -74,3 +75,8 @@ autostart = true
 [node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2mxaw")
 bus = &"Sound"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("7_yxalu")
+hframes = 24
