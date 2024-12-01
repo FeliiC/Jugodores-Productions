@@ -6,6 +6,7 @@ var gravity = 300
 var state = false
 @onready var random_value: int = 50
 @onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
+@onready var floorDetector: RayCast2D = $RayCast2D
 
 
 var target: Player
@@ -18,8 +19,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if is_on_floor():
+	if floorDetector.is_colliding():
 		queue_free()
+	
 
 	#if (not target) and (not is_on_ceiling())
 	if (not target):
