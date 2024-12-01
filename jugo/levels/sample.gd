@@ -9,11 +9,13 @@ func _ready() -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
+	set_lastScene()
 	if ui_inventory.keysNum >= 3:
 		ui_inventory.keysNum = 0
 		print("3 keys")
 		get_tree().paused = true
 		Manager._go_to_victory_menu()
+		
 
 
 #func _on_body_entered(body: Node) -> void:
@@ -22,3 +24,7 @@ func _physics_process(delta: float) -> void:
 	#var player = body as Player
 	#if player:
 		#action()
+
+
+func set_lastScene() -> void:
+	InventoryManager.lastCheckpoint = "res://levels/Sample.tscn"

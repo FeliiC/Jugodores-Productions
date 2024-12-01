@@ -55,13 +55,16 @@ shape = SubResource("RectangleShape2D_1ed1s")
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="Pivot"]
-position = Vector2(58, 55)
+position = Vector2(60, 55)
 target_position = Vector2(0, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 modulate = Color(0.0313726, 1, 1, 1)
 self_modulate = Color(1, 0, 1, 1)
 texture = ExtResource("1_4u4nf")
+
+[node name="WallDetector" type="RayCast2D" parent="Pivot"]
+target_position = Vector2(70, 0)
 
 [node name="JumpCooldown" type="Timer" parent="."]
 process_callback = 0

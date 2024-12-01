@@ -15,6 +15,7 @@ var target: Player
 @onready var ray_cast: RayCast2D = $Pivot/RayCast2D
 @onready var jump_cooldown: Timer = $JumpCooldown
 @onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
+@onready var wallDetector: RayCast2D = $Pivot/WallDetector
 
 func _ready() -> void:
 	detection_area.body_entered.connect(_on_detection_body_entered)
@@ -41,6 +42,8 @@ func _physics_process(delta: float) -> void:
 			timer = jumpTimeReseter
 		if not ray_cast.is_colliding():
 			pivot.scale.x *= -1	
+		if wallDetector.is_colliding():
+			pivot.scale.x *= -1
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
