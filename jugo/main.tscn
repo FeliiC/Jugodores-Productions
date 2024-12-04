@@ -93,7 +93,7 @@ scale = Vector2(5, 0.351)
 texture = ExtResource("4_equv4")
 
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(262, 95)
+position = Vector2(200, 71)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
 position = Vector2(526, -375)
@@ -165,7 +165,7 @@ position = Vector2(-124, -512)
 [node name="PauseMenu" parent="." instance=ExtResource("9_ksy2b")]
 
 [node name="BoxCB" parent="." instance=ExtResource("10_wwhem")]
-position = Vector2(149, 89)
+position = Vector2(92, 85)
 
 [node name="BoxCB2" parent="." instance=ExtResource("10_wwhem")]
 position = Vector2(12, -257)
