@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 			##rigidbody.position += direction * push_force * delta
 			#rigidbody.velocity = direction * push_force
 			##velocity += -direction * 500
+			
+	
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -jump_speed
@@ -69,6 +71,16 @@ func _physics_process(delta: float) -> void:
 				#if is_pushing_box and rigidbody:
 						#is_pushing_box = false
 						#rigidbody.sleeping = true  # Volver a la física normal cuando ya no se empuja
+						
+	var dir = velocity
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var rigidbody = collision.get_collider() as RigidBody2D
+		if rigidbody:
+			var direction = global_position.direction_to(rigidbody.global_position).normalized()
+			rigidbody.apply_force(direction * 10000) #apply_central_impulse
+			velocity = dir
+			#velocity += -direction * 500
 
 	
 	if move_input != 0:
@@ -127,15 +139,15 @@ func take_damage(damage: int):
 	
 	
 	
-func _ready():
-	# Conectar la señal `body_entered` al método que manejará la colisión
-	connect("body_entered", self, "_on_body_entered")
+#func _ready():
+	## Conectar la señal `body_entered` al método que manejará la colisión
+	#connect("body_entered", self, "_on_body_entered")
 	
-# Función que se llama cuando el cuerpo entra en contacto con otro cuerpo
-func _on_body_entered(body):
-	# Verificamos si la colisión es con un objeto que sea una caja (o cualquier otro objeto con un nombre o etiqueta específico)
-	if body.is_in_group("movable"):  # Asegúrate de que la caja con la que colisionas esté en este grupo
-		# Mover la caja en la dirección deseada, por ejemplo, hacia adelante
-		var direction = (body.global_transform.origin - global_transform.origin).normalized()
-		body.linear_velocity = direction * move_force  # Usamos la dirección de la colisión y le damos una velocidad
+## Función que se llama cuando el cuerpo entra en contacto con otro cuerpo
+#func _on_body_entered(body):
+	## Verificamos si la colisión es con un objeto que sea una caja (o cualquier otro objeto con un nombre o etiqueta específico)
+	#if body.is_in_group("movable"):  # Asegúrate de que la caja con la que colisionas esté en este grupo
+		## Mover la caja en la dirección deseada, por ejemplo, hacia adelante
+		#var direction = (body.global_transform.origin - global_transform.origin).normalized()
+		#body.linear_velocity = direction * move_force  # Usamos la dirección de la colisión y le damos una velocidad
 		

@@ -148,7 +148,7 @@ libraries = {
 autoplay = "Platform_move1"
 
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
-position = Vector2(323, 116)
+position = Vector2(138, -197)
 
 [node name="Pickable" parent="." instance=ExtResource("6_j0i3t")]
 position = Vector2(131, 172)
@@ -167,7 +167,6 @@ position = Vector2(605, -380)
 
 [node name="Box" parent="." instance=ExtResource("10_cjtjm")]
 position = Vector2(205, 123)
-mass = 1.0
 
 [node name="Box2" parent="." instance=ExtResource("11_bfx8i")]
 position = Vector2(220, -229)
