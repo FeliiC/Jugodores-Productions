@@ -88,3 +88,6 @@ func take_damage(damage: int):
 	Manager._go_to_failed_menu()
 	
 	
+func on_area_entered(lever: Area2D) -> void:
+	lever.turn_level(1)
+	#Input.is_action_pressed("lever")
