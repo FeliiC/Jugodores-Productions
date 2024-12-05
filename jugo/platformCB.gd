@@ -24,17 +24,39 @@ extends CharacterBody2D
 @onready var lever : Node2D = get_parent().get_node(leverName)
 
 @export var leverName2 : String
-@onready var lever2 : Node2D = get_parent().get_node(leverName2)
+@onready var lever2 : Node2D
 
 var moving_right : bool = false  # Indica si la plataforma se mueve a la derecha
 var moving_left : bool = false   # Indica si la plataforma se mueve a la izquierda
 
 func _ready():
-	# Nos aseguramos de que la plataforma siga el estado de la palanca cuando comience el juego
-	lever.connect("lever_right",Callable(self, "_on_lever_right"))
-	lever.connect("lever_left",Callable(self, "_on_lever_left"))
-	lever2.connect("lever_right",Callable(self, "_on_lever_right"))
-	lever2.connect("lever_left",Callable(self, "_on_lever_left"))
+	if has_node(leverName2):
+		lever2 = get_node(leverName2)
+	elif get_parent().has_node(leverName2):
+		lever2 = get_parent().get_node(leverName2)
+	# Deferimos la conexión para asegurar que los nodos existen
+	call_deferred("_setup_connections")
+
+#func _ready():
+	## Nos aseguramos de que la plataforma siga el estado de la palanca cuando comience el juego
+	#lever.connect("lever_right",Callable(self, "_on_lever_right"))
+	#lever.connect("lever_left",Callable(self, "_on_lever_left"))
+	#lever2.connect("lever_right",Callable(self, "_on_lever_right"))
+	#lever2.connect("lever_left",Callable(self, "_on_lever_left"))
+	
+	
+func _setup_connections():
+	if lever and lever.has_method("connect"):
+		lever.connect("lever_right", Callable(self, "_on_lever_right"))
+		lever.connect("lever_left", Callable(self, "_on_lever_left"))
+	else:
+		print("Error: La palanca 'lever' no está disponible.")
+	
+	if lever2 and lever2.has_method("connect"):
+		lever2.connect("lever_right", Callable(self, "_on_lever_right"))
+		lever2.connect("lever_left", Callable(self, "_on_lever_left"))
+	else:
+		print("Error: La palanca 'lever2' no está disponible.")
 
 func _on_lever_right():
 	moving_right = true

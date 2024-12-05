@@ -171,10 +171,10 @@ position = Vector2(439, 205)
 leverName = "Lever"
 leverName2 = "Lever3"
 
+[node name="Lever3" parent="PlatformCB" instance=ExtResource("11_vjse6")]
+position = Vector2(735, -48)
+
 [node name="Lever" parent="." instance=ExtResource("11_vjse6")]
 position = Vector2(235, 166)
 
 [node name="Lever2" parent="." instance=ExtResource("11_vjse6")]
-
-[node name="Lever3" parent="." instance=ExtResource("11_vjse6")]
-position = Vector2(1174, 157)
