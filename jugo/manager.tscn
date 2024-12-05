@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://b247a4416ms57"]
+[gd_scene load_steps=11 format=3 uid="uid://b247a4416ms57"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_tkc1a"]
 [ext_resource type="PackedScene" uid="uid://b8230l22cn0lv" path="res://ui/menus/main_menu.tscn" id="2_tfyci"]
 [ext_resource type="PackedScene" uid="uid://cys4fiwwmp1fm" path="res://ui/menus/failedMenu.tscn" id="3_1ofmr"]
 [ext_resource type="PackedScene" uid="uid://0jb360r63k25" path="res://ui/menus/victory_menu.tscn" id="4_fpo78"]
 [ext_resource type="PackedScene" uid="uid://bgv3xx76tr1hg" path="res://levels/Sample.tscn" id="5_oi8uk"]
+[ext_resource type="PackedScene" uid="uid://d3tthofwryig6" path="res://levels/tutorial.tscn" id="6_1gp72"]
 [ext_resource type="Script" path="res://resources/level_info.gd" id="6_5jdsd"]
+[ext_resource type="PackedScene" uid="uid://dr83bh4irgfvb" path="res://levels/CaveWithBats.tscn" id="7_6ac31"]
 [ext_resource type="Resource" uid="uid://csm4ctexp2wae" path="res://levels/tutorial.tres" id="7_rm77h"]
+[ext_resource type="PackedScene" uid="uid://dfikvtvm2cls1" path="res://levels/CaveLevel.tscn" id="8_yoswv"]
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_tkc1a")
@@ -14,4 +17,7 @@ mainMenuScene = ExtResource("2_tfyci")
 failedMenuScene = ExtResource("3_1ofmr")
 victoryMenuScene = ExtResource("4_fpo78")
 sampleScene = ExtResource("5_oi8uk")
+tutorialScene = ExtResource("6_1gp72")
+CWBScene = ExtResource("7_6ac31")
+CaveScene = ExtResource("8_yoswv")
 levels = Array[ExtResource("6_5jdsd")]([ExtResource("7_rm77h")])
