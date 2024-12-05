@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=19 format=4 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="2_3gt3h"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="9_ksy2b"]
 [ext_resource type="PackedScene" uid="uid://cgwys2mewrcnh" path="res://interactive/platform_cb.tscn" id="10_fk3oa"]
 [ext_resource type="PackedScene" uid="uid://gj6ae8qxd084" path="res://interactive/lever.tscn" id="11_vjse6"]
+[ext_resource type="PackedScene" path="res://interactive/tile_map_layer_interactive.tscn" id="12_gqeo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -117,7 +118,7 @@ scale = Vector2(2.33594, 0.164063)
 texture = ExtResource("4_equv4")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
-position = Vector2(18, 150)
+position = Vector2(-606, 119)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(338, 371)
@@ -178,3 +179,6 @@ position = Vector2(735, -48)
 position = Vector2(235, 166)
 
 [node name="Lever2" parent="." instance=ExtResource("11_vjse6")]
+
+[node name="TileMapLayerInteractive" parent="." instance=ExtResource("12_gqeo7")]
+tile_map_data = PackedByteArray("AAABAP//AQAKAAQAAAACAP//AQALAAQAAAADAP//AQALAAQAAAAEAP//AQALAAQAAAAFAP//AQAMAAQAAAD2/wIAAQALAAQAAAD3/wIAAQALAAQAAAD4/wIAAQALAAQAAAD5/wIAAQALAAQAAAD6/wIAAQAMAAQAAAD1/wIAAQALAAQAAAD0/wIAAQALAAQAAADz/wIAAQAKAAQAAAA=")

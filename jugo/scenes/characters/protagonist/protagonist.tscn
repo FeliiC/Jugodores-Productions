@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://csbfhv37x6q3i"]
+[gd_scene load_steps=35 format=3 uid="uid://csbfhv37x6q3i"]
 
 [ext_resource type="Script" path="res://scenes/characters/protagonist/protagonist.gd" id="1_fwdmi"]
 [ext_resource type="Texture2D" uid="uid://hs7e86t226pd" path="res://assets/protagonista/1_Cat_Idle-Sheet.png" id="2_c88kb"]
@@ -529,7 +529,11 @@ states/run/node = SubResource("AnimationNodeAnimation_6opo4")
 states/run/position = Vector2(532, 221)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_m6aay"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_1vq1x"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_sot06"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_e5ayu"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_le5g4"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_f4teo"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_lcegt"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_ry1ql"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_aybyk")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca3oe"]
+size = Vector2(46, 71.25)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 3
 collision_mask = 131
 script = ExtResource("1_fwdmi")
@@ -594,3 +598,14 @@ bus = &"Sound"
 
 [node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_xrp32")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 13)
+shape = SubResource("RectangleShape2D_ca3oe")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
