@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgwys2mewrcnh"]
+
+[ext_resource type="Script" path="res://platformCB.gd" id="1_8b68r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueqiq"]
+size = Vector2(841, 103)
+
+[node name="PlatformCB" type="CharacterBody2D"]
+script = ExtResource("1_8b68r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(410.5, 41.5)
+shape = SubResource("RectangleShape2D_ueqiq")
