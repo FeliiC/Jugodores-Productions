@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d3tthofwryig6"]
+[gd_scene load_steps=14 format=4 uid="uid://d3tthofwryig6"]
 
 [ext_resource type="Texture2D" uid="uid://vcrvn3im6jh0" path="res://assets/tilesets/cielo/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" id="1_dh5oo"]
 [ext_resource type="Texture2D" uid="uid://ddj2dp031ves5" path="res://assets/tilesets/cielo/Mountain Dusk/version B/Layers/myst.png" id="2_taby6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="7_e2qb5"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="8_n6q0q"]
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="9_ei2th"]
+[ext_resource type="Script" path="res://levels/Texto_Tutorial.gd" id="10_mu44t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xknc1"]
 texture = ExtResource("2_taby6")
@@ -190,3 +191,49 @@ position = Vector2(3888, 569)
 position = Vector2(4256, 567)
 
 [node name="UIInventory" parent="." instance=ExtResource("9_ei2th")]
+
+[node name="texto2" type="Label" parent="."]
+modulate = Color(0.909804, 0.92549, 0.168627, 1)
+offset_left = 392.0
+offset_top = 463.0
+offset_right = 671.0
+offset_bottom = 512.0
+text = "Cuidado con las rocas! 
+te pueden aplastar!"
+horizontal_alignment = 1
+
+[node name="texto3" type="Label" parent="."]
+offset_left = 1466.0
+offset_top = 512.0
+offset_right = 1677.0
+offset_bottom = 561.0
+text = "Parate debajo de tus 
+enemigos para derrotarlos!"
+horizontal_alignment = 1
+
+[node name="texto5" type="Label" parent="."]
+offset_left = 3323.0
+offset_top = 549.0
+offset_right = 3465.0
+offset_bottom = 598.0
+text = "Recoge las llaves 
+para pasar el nivel"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("10_mu44t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 880.0
+offset_top = 19.0
+offset_right = 1129.0
+offset_bottom = 69.0
+alignment = 1
+
+[node name="texto1" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Usa A D o IZQ DER para moverte"
+
+[node name="texto4" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Usa W o espacio para saltar"
