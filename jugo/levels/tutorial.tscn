@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3tthofwryig6"]
+[gd_scene load_steps=15 format=4 uid="uid://d3tthofwryig6"]
 
 [ext_resource type="Texture2D" uid="uid://vcrvn3im6jh0" path="res://assets/tilesets/cielo/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" id="1_dh5oo"]
+[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_vtgw2"]
 [ext_resource type="Texture2D" uid="uid://ddj2dp031ves5" path="res://assets/tilesets/cielo/Mountain Dusk/version B/Layers/myst.png" id="2_taby6"]
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="3_u3h2d"]
 [ext_resource type="Texture2D" uid="uid://dlyqkimemn4rn" path="res://assets/tilesets/cielo/Mountain Dusk/Version C/layers/clouds.png" id="4_8746x"]
@@ -108,6 +109,7 @@ sources/0 = SubResource("TileSetAtlasSource_xknc1")
 size = Vector2(776, 290)
 
 [node name="tutorial" type="Node2D"]
+script = ExtResource("1_vtgw2")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.07, 0)
@@ -177,9 +179,11 @@ shape = SubResource("RectangleShape2D_fbwti")
 
 [node name="FallingEnemy" parent="." instance=ExtResource("7_e2qb5")]
 position = Vector2(666, 458)
+collision_mask = 64
 
 [node name="FallingEnemy2" parent="." instance=ExtResource("7_e2qb5")]
 position = Vector2(1128, 459)
+collision_mask = 64
 
 [node name="Pickable" parent="." instance=ExtResource("8_n6q0q")]
 position = Vector2(3540, 563)
