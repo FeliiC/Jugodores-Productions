@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b247a4416ms57"]
+[gd_scene load_steps=12 format=3 uid="uid://b247a4416ms57"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_tkc1a"]
 [ext_resource type="PackedScene" uid="uid://b8230l22cn0lv" path="res://ui/menus/main_menu.tscn" id="2_tfyci"]
 [ext_resource type="PackedScene" uid="uid://cys4fiwwmp1fm" path="res://ui/menus/failedMenu.tscn" id="3_1ofmr"]
+[ext_resource type="PackedScene" uid="uid://bxwkfnuw5fom2" path="res://ui/menus/credits.tscn" id="3_bsnsb"]
 [ext_resource type="PackedScene" uid="uid://0jb360r63k25" path="res://ui/menus/victory_menu.tscn" id="4_fpo78"]
 [ext_resource type="PackedScene" uid="uid://bgv3xx76tr1hg" path="res://levels/Sample.tscn" id="5_oi8uk"]
 [ext_resource type="PackedScene" uid="uid://d3tthofwryig6" path="res://levels/tutorial.tscn" id="6_1gp72"]
@@ -14,6 +15,7 @@
 [node name="Manager" type="Node"]
 script = ExtResource("1_tkc1a")
 mainMenuScene = ExtResource("2_tfyci")
+creditsScene = ExtResource("3_bsnsb")
 failedMenuScene = ExtResource("3_1ofmr")
 victoryMenuScene = ExtResource("4_fpo78")
 sampleScene = ExtResource("5_oi8uk")

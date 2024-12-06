@@ -29,7 +29,7 @@ func _ready() -> void:
 	cave_level.visible = GameState.cave_level_unlocked
 	cwb_level.visible = GameState.cwb_unlocked
 	#start.pressed.connect(_on_start_pressed)
-	#credits.pressed.connect(_on_credits_pressed)
+	credits.pressed.connect(_on_credits_pressed)
 	tutorial.pressed.connect(_on_tutorial_pressed)
 	sample.pressed.connect(_on_sample_pressed)
 	quit.pressed.connect(_on_quit_pressed)            #←
@@ -50,7 +50,7 @@ func _on_start_pressed() -> void:
 	
 func _on_credits_pressed() -> void:
 	#get_tree().change_scene_to_file("res://credits.tscn")
-	get_tree().change_scene_to_file("credits")
+	Manager._go_to_credits()
 	
 	
 	#Manager._go_to_credits()
