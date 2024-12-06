@@ -8,9 +8,9 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	set_lastScene()
-	if ui_inventory.keysNum >= 2:
+	if ui_inventory.keysNum >= 6:
 		ui_inventory.keysNum = 0
-		print("2 keys")
+		print("6 keys")
 		get_tree().paused = true
 		GameState.cave_level_unlocked = true
 		GameState.oak_level_unlocked = true
