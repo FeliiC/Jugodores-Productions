@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="9_ksy2b"]
 [ext_resource type="PackedScene" uid="uid://cgwys2mewrcnh" path="res://interactive/platform_cb.tscn" id="10_fk3oa"]
 [ext_resource type="PackedScene" uid="uid://gj6ae8qxd084" path="res://interactive/lever.tscn" id="11_vjse6"]
-[ext_resource type="PackedScene" path="res://interactive/tile_map_layer_interactive.tscn" id="12_gqeo7"]
+[ext_resource type="PackedScene" uid="uid://bqqdf2r56hlg5" path="res://interactive/tile_map_layer_interactive.tscn" id="12_gqeo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
