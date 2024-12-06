@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d3tthofwryig6"]
+[gd_scene load_steps=17 format=4 uid="uid://d3tthofwryig6"]
 
 [ext_resource type="Texture2D" uid="uid://vcrvn3im6jh0" path="res://assets/tilesets/cielo/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" id="1_dh5oo"]
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_vtgw2"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="8_n6q0q"]
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="9_ei2th"]
 [ext_resource type="Script" path="res://levels/Texto_Tutorial.gd" id="10_mu44t"]
-[ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="12_paxky"]
 [ext_resource type="AudioStream" uid="uid://cgiwmvqioc0xs" path="res://assets/Basic sound test/music/lvl_music(test).mp3" id="12_jdt62"]
+[ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="12_paxky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xknc1"]
 texture = ExtResource("2_taby6")
@@ -244,16 +244,8 @@ text = "Usa A D o IZQ DER para moverte"
 layout_mode = 2
 text = "Usa W o espacio para saltar"
 
-[node name="Pickable4" parent="." instance=ExtResource("8_n6q0q")]
-position = Vector2(-28, 653)
-
-[node name="Pickable5" parent="." instance=ExtResource("8_n6q0q")]
-position = Vector2(-90, 667)
-
-[node name="Pickable6" parent="." instance=ExtResource("8_n6q0q")]
-position = Vector2(-71, 594)
-
 [node name="PauseMenu" parent="." instance=ExtResource("12_paxky")]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jdt62")
 autoplay = true

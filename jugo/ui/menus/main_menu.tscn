@@ -55,7 +55,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Level 2"
 
-[node name="CWBLevel" type="Button" parent="VBoxContainer"]
+[node name="OakLevel" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level 3"

@@ -8,6 +8,8 @@ extends Node
 @export var tutorialScene: PackedScene
 @export var CWBScene: PackedScene
 @export var CaveScene: PackedScene
+@export var oakScene: PackedScene
+
 @export var num: int = 0
 @export var playerInvoke = false
 @export var playerInRange = false
@@ -64,6 +66,11 @@ func _go_to_cave_level() -> void:
 	if not CaveScene:
 		return
 	get_tree().change_scene_to_packed(CaveScene)
+
+func _go_to_oak_level() -> void:
+	if not oakScene:
+		return
+	get_tree().change_scene_to_packed(oakScene)
 
 func save_game() -> void:
 	var data = JSON.stringify(

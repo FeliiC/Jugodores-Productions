@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b247a4416ms57"]
+[gd_scene load_steps=13 format=3 uid="uid://b247a4416ms57"]
 
 [ext_resource type="Script" path="res://manager.gd" id="1_tkc1a"]
 [ext_resource type="PackedScene" uid="uid://b8230l22cn0lv" path="res://ui/menus/main_menu.tscn" id="2_tfyci"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dr83bh4irgfvb" path="res://levels/CaveWithBats.tscn" id="7_6ac31"]
 [ext_resource type="Resource" uid="uid://csm4ctexp2wae" path="res://levels/tutorial.tres" id="7_rm77h"]
 [ext_resource type="PackedScene" uid="uid://dfikvtvm2cls1" path="res://levels/CaveLevel.tscn" id="8_yoswv"]
+[ext_resource type="PackedScene" uid="uid://csya1odpdf5ye" path="res://levels/oak_woods_level.tscn" id="10_6reus"]
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_tkc1a")
@@ -22,4 +23,5 @@ sampleScene = ExtResource("5_oi8uk")
 tutorialScene = ExtResource("6_1gp72")
 CWBScene = ExtResource("7_6ac31")
 CaveScene = ExtResource("8_yoswv")
+oakScene = ExtResource("10_6reus")
 levels = Array[ExtResource("6_5jdsd")]([ExtResource("7_rm77h")])

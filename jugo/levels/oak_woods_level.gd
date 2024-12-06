@@ -8,9 +8,9 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	set_lastScene()
-	if ui_inventory.keysNum >= 3:
+	if ui_inventory.keysNum >= 2:
 		ui_inventory.keysNum = 0
-		print("3 keys")
+		print("2 keys")
 		get_tree().paused = true
 		GameState.cave_level_unlocked = true
 		GameState.oak_level_unlocked = true
@@ -22,4 +22,4 @@ func _process(delta):
 
 
 func set_lastScene() -> void:
-	InventoryManager.lastCheckpoint = "res://levels/caveLevel.tscn"
+	InventoryManager.lastCheckpoint = "res://levels/oak_woods_level.tscn"

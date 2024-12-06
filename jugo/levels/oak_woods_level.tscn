@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://csya1odpdf5ye"]
+[gd_scene load_steps=17 format=4 uid="uid://csya1odpdf5ye"]
 
 [ext_resource type="Texture2D" uid="uid://bwkenedhrnn6p" path="res://assets/tilesets/bosque/oak_woods_v1.0/oak_woods_tileset.png" id="1_tjqub"]
+[ext_resource type="Script" path="res://levels/oak_woods_level.gd" id="1_w2ub3"]
 [ext_resource type="Texture2D" uid="uid://c5d1n2j2i2p01" path="res://assets/tilesets/bosque/oak_woods_v1.0/background/background_layer_1.png" id="1_yo278"]
 [ext_resource type="Texture2D" uid="uid://b5ctnukcgij44" path="res://assets/tilesets/bosque/oak_woods_v1.0/background/background_layer_2.png" id="2_5k8vh"]
 [ext_resource type="Texture2D" uid="uid://bcewnhdpk6ysi" path="res://assets/tilesets/bosque/oak_woods_v1.0/background/background_layer_3.png" id="3_1nqcq"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://gj6ae8qxd084" path="res://interactive/lever.tscn" id="9_t5qie"]
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="10_3lkw7"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="11_i75rl"]
+[ext_resource type="PackedScene" uid="uid://d1q6y6b5lck3w" path="res://components/kill_zone.tscn" id="13_grhsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpmge"]
 texture = ExtResource("1_tjqub")
@@ -960,7 +962,11 @@ terrain_set_0/terrain_0/name = "Terrain10"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 1, 1)
 sources/2 = SubResource("TileSetAtlasSource_tpmge")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djlgn"]
+size = Vector2(2801, 178)
+
 [node name="oakWoodsLevel" type="Node2D"]
+script = ExtResource("1_w2ub3")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0)
@@ -1032,3 +1038,10 @@ position = Vector2(396, 508)
 
 [node name="Pickable2" parent="." instance=ExtResource("11_i75rl")]
 position = Vector2(1087, 318)
+
+[node name="KillZone" parent="." instance=ExtResource("13_grhsn")]
+position = Vector2(-5, 730)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(1390.5, 79)
+shape = SubResource("RectangleShape2D_djlgn")

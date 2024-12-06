@@ -17,7 +17,8 @@ extends Control
 @onready var tutorial = %Tutorial
 @onready var unresolved_level = $VBoxContainer/UnresolvedLevel
 @onready var cave_level = %CaveLevel
-@onready var cwb_level = %CWBLevel
+@onready var oak_level = %OakLevel
+
 
 
 #var main = preload("res://main.tscn")  #方法1
@@ -27,7 +28,7 @@ extends Control
 func _ready() -> void:
 	sample.visible = GameState.sample_unlocked
 	cave_level.visible = GameState.cave_level_unlocked
-	cwb_level.visible = GameState.cwb_unlocked
+	oak_level.visible = GameState.oak_level_unlocked
 	#start.pressed.connect(_on_start_pressed)
 	credits.pressed.connect(_on_credits_pressed)
 	tutorial.pressed.connect(_on_tutorial_pressed)
@@ -38,6 +39,7 @@ func _ready() -> void:
 	levels.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/menus/levels_menu.tscn"))
 	unresolved_level.pressed.connect(_on_new_tutorial_pressed)
 	cave_level.pressed.connect(_on_cave_level_pressed)
+	oak_level.pressed.connect(_on_oak_level_pressed)
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(main)
 	#get_tree().change_scene_to_file("res://main.tscn") #方法3(与方法1，方法2的缺点一样，
@@ -71,3 +73,5 @@ func _on_tutorial_pressed() -> void:
 
 func _on_cave_level_pressed() -> void:
 	Manager._go_to_cave_level()
+func _on_oak_level_pressed() -> void:
+	Manager._go_to_oak_level()
