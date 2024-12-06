@@ -14,7 +14,9 @@ func _physics_process(delta: float) -> void:
 		ui_inventory.keysNum = 0
 		print("3 keys")
 		get_tree().paused = true
-		Manager._go_to_cave_level()
+		GameState.sample_unlocked = true
+		GameState.cave_level_unlocked = true
+		Manager._go_to_victory_menu()
 
 
 

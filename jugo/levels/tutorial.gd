@@ -11,7 +11,8 @@ func _physics_process(delta: float) -> void:
 		ui_inventory.keysNum = 0
 		print("3 keys")
 		get_tree().paused = true
-		Manager._go_to_menu()
+		GameState.sample_unlocked = true
+		Manager._go_to_victory_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

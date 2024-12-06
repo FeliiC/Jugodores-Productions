@@ -477,3 +477,12 @@ stream = ExtResource("13_cd02u")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="Pickable" parent="." instance=ExtResource("11_ub5hb")]
+position = Vector2(-227, 578)
+
+[node name="Pickable3" parent="." instance=ExtResource("11_ub5hb")]
+position = Vector2(-228, 523)
+
+[node name="Pickable4" parent="." instance=ExtResource("11_ub5hb")]
+position = Vector2(-226, 464)

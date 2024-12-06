@@ -241,3 +241,12 @@ text = "Usa A D o IZQ DER para moverte"
 [node name="texto4" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Usa W o espacio para saltar"
+
+[node name="Pickable4" parent="." instance=ExtResource("8_n6q0q")]
+position = Vector2(-28, 653)
+
+[node name="Pickable5" parent="." instance=ExtResource("8_n6q0q")]
+position = Vector2(-90, 667)
+
+[node name="Pickable6" parent="." instance=ExtResource("8_n6q0q")]
+position = Vector2(-71, 594)

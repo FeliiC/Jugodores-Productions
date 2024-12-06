@@ -187,3 +187,12 @@ position = Vector2(5129, -281)
 position = Vector2(4538, 153)
 
 [node name="UIInventory" parent="." instance=ExtResource("13_18vae")]
+
+[node name="Pickable2" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(142, 534)
+
+[node name="Pickable3" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(154, 492)
+
+[node name="Pickable4" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(182, 527)
