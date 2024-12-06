@@ -1,15 +1,12 @@
-
 [gd_scene load_steps=17 format=4 uid="uid://dfikvtvm2cls1"]
 
 [ext_resource type="Texture2D" uid="uid://dqlkle3t4t5wk" path="res://scenes/characters/enemies/mainlev_build.png" id="1_1b3o8"]
-[ext_resource type="Script" path="res://levels/cave_level.gd" id="1_4aofx"]
 [ext_resource type="Texture2D" uid="uid://68dwuahfxeh1" path="res://assets/tilesets/cuevas/background1.png" id="1_hqp0g"]
 [ext_resource type="Script" path="res://levels/cave_level.gd" id="1_hskwc"]
 [ext_resource type="Texture2D" uid="uid://cu7oevluop13s" path="res://assets/tilesets/cuevas/background2.png" id="2_v77md"]
 [ext_resource type="Texture2D" uid="uid://urqe4t4roey6" path="res://assets/tilesets/cuevas/background3.png" id="3_hclr1"]
 [ext_resource type="Texture2D" uid="uid://tvcpjmk440g4" path="res://assets/tilesets/cuevas/background4a.png" id="4_uokyf"]
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="6_o50bt"]
-
 [ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="7_f2gv5"]
 [ext_resource type="PackedScene" uid="uid://goijfgapioj5" path="res://scenes/characters/enemies/enemy_with_pickable.tscn" id="8_tmh2c"]
 [ext_resource type="PackedScene" uid="uid://bp1shbul5kd5s" path="res://scenes/characters/enemies/jumping_enemy.tscn" id="10_7igna"]
@@ -55,7 +52,6 @@ texture = ExtResource("1_1b3o8")
 19:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:24/0 = 0
 19:24/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
 17:23/0 = 0
 17:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:24/0 = 0
@@ -70,6 +66,7 @@ size = Vector2(1452.5, 193)
 
 [node name="caveLevel" type="Node2D"]
 script = ExtResource("1_hskwc")
+
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(1150, 0)
@@ -108,7 +105,6 @@ centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
-
 tile_map_data = PackedByteArray("AAAEAAwAAgAOABcAAAAEAA0AAgAOABgAAAAFAAwAAgAPABcAAAAFAA0AAgAPABgAAAAGAAwAAgAOABcAAAAGAA0AAgAOABgAAAAHAAwAAgAPABcAAAAHAA0AAgAPABgAAAAIAAwAAgAOABcAAAAIAA0AAgAOABgAAAAJAAwAAgAPABcAAAAJAA0AAgAPABgAAAAKAAwAAgAOABcAAAAKAA0AAgAOABgAAAALAAwAAgAPABcAAAALAA0AAgAPABgAAAAMAAwAAgAOABcAAAAMAA0AAgAOABgAAAANAAwAAgAPABcAAAANAA0AAgAPABgAAAAOAAwAAgAOABcAAAAOAA0AAgAOABgAAAAPAAwAAgAPABcAAAAPAA0AAgAPABgAAAAQAAwAAgAOABcAAAAQAA0AAgAOABgAAAARAAwAAgAOABcAAAARAA0AAgAOABgAAAASAAwAAgAPABcAAAASAA0AAgAPABgAAAATAAwAAgAPABcAAAATAA0AAgAPABgAAAAUAAwAAgAOABcAAAAUAA0AAgAOABgAAAAVAAwAAgAPABcAAAAVAA0AAgAPABgAAAAWAAwAAgAOABcAAAAWAA0AAgAOABgAAAAXAAwAAgAPABcAAAAXAA0AAgAPABgAAAAYAAwAAgAOABcAAAAYAA0AAgAOABgAAAAZAAwAAgAPABcAAAAZAA0AAgAPABgAAAAaAAwAAgAOABcAAAAaAA0AAgAOABgAAAAbAAwAAgAPABcAAAAbAA0AAgAPABgAAAAcAAwAAgAOABcAAAAcAA0AAgAOABgAAAAdAAwAAgAPABcAAAAdAA0AAgAPABgAAAAeAAwAAgAOABcAAAAeAA0AAgAOABgAAAAfAAwAAgAPABcAAAAfAA0AAgAPABgAAAAgAAwAAgAOABcAAAAgAA0AAgAOABgAAAAhAAwAAgAPABcAAAAhAA0AAgAPABgAAAAiAAwAAgAOABcAAAAiAA0AAgAOABgAAAAjAAwAAgAPABcAAAAjAA0AAgAPABgAAAAkAAwAAgAOABcAAAAkAA0AAgAOABgAAAAlAAwAAgAPABcAAAAlAA0AAgAPABgAAAAmAAwAAgAOABcAAAAmAA0AAgAOABgAAAAnAAwAAgAPABcAAAAnAA0AAgAPABgAAAAoAAwAAgAOABcAAAAoAA0AAgAOABgAAAApAAwAAgAOABcAAAApAA0AAgAOABgAAAAqAAwAAgAPABcAAAAqAA0AAgAPABgAAAArAAwAAgAOABcAAAArAA0AAgAOABgAAAAsAAwAAgAPABcAAAAsAA0AAgAPABgAAAACAAwAAgAOABcAAAACAA0AAgAOABgAAAADAAwAAgAPABcAAAADAA0AAgAPABgAAAAAAAwAAgAOABcAAAAAAA0AAgAOABgAAAABAAwAAgAPABcAAAABAA0AAgAPABgAAAD+/wwAAgAOABcAAAD+/w0AAgAOABgAAAD//wwAAgAPABcAAAD//w0AAgAPABgAAAD8/wwAAgAOABcAAAD8/w0AAgAOABgAAAD9/wwAAgAPABcAAAD9/w0AAgAPABgAAAAyAAwAAgAbABcAAAAyAA0AAgAbABgAAAAzAAwAAgAcABcAAAAzAA0AAgAcABgAAAA0AAwAAgAbABcAAAA0AA0AAgAbABgAAAA1AAwAAgAcABcAAAA1AA0AAgAcABgAAAA2AAwAAgAbABcAAAA2AA0AAgAbABgAAAA3AAwAAgAcABcAAAA3AA0AAgAcABgAAAA4AAwAAgAbABcAAAA4AA0AAgAbABgAAAA5AAwAAgAcABcAAAA5AA0AAgAcABgAAAA6AAwAAgAbABcAAAA6AA0AAgAbABgAAAA7AAwAAgAVABcAAAA7AA0AAgAVABgAAAA8AAwAAgAWABcAAAA8AA0AAgAWABgAAAA9AAwAAgAVABcAAAA9AA0AAgAVABgAAAA+AAwAAgAWABcAAAA+AA0AAgAWABgAAAA/AAwAAgAVABcAAAA/AA0AAgAVABgAAABAAAwAAgAWABcAAABAAA0AAgAWABgAAABBAAwAAgAOABcAAABBAA0AAgAOABgAAABCAAwAAgAPABcAAABCAA0AAgAPABgAAABDAAwAAgAOABcAAABDAA0AAgAOABgAAABEAAwAAgAPABcAAABEAA0AAgAPABgAAABFAAwAAgAVABcAAABFAA0AAgAVABgAAABGAAwAAgAWABcAAABGAA0AAgAWABgAAABHAAwAAgAVABcAAABHAA0AAgAVABgAAABIAAwAAgAWABcAAABIAA0AAgAWABgAAABJAAwAAgAVABcAAABJAA0AAgAVABgAAABKAAwAAgAWABcAAABKAA0AAgAWABgAAABMAAsAAgARABcAAABMAAwAAgARABgAAABNAAsAAgARABcAAABNAAwAAgARABgAAABPAAoAAgATABcAAABPAAsAAgATABgAAABQAAoAAgATABcAAABQAAsAAgATABgAAABSAAkAAgATABcAAABSAAoAAgATABgAAABTAAkAAgATABcAAABTAAoAAgATABgAAABXAAcAAgATABcAAABXAAgAAgATABgAAABYAAcAAgATABcAAABYAAgAAgATABgAAABcAAUAAgARABcAAABcAAYAAgARABgAAABdAAUAAgARABcAAABdAAYAAgARABgAAABeAAUAAgARABcAAABeAAYAAgARABgAAABfAAUAAgARABcAAABfAAYAAgARABgAAABgAAUAAgARABcAAABgAAYAAgARABgAAABlAAMAAgAOABcAAABlAAQAAgAOABgAAABmAAMAAgAPABcAAABmAAQAAgAPABgAAABnAAMAAgAOABcAAABnAAQAAgAOABgAAABoAAMAAgAPABcAAABoAAQAAgAPABgAAABpAAMAAgAOABcAAABpAAQAAgAOABgAAABqAAMAAgAPABcAAABqAAQAAgAPABgAAABrAAMAAgAOABcAAABrAAQAAgAOABgAAABsAAMAAgAPABcAAABsAAQAAgAPABgAAABtAAMAAgAOABcAAABtAAQAAgAOABgAAABuAAMAAgAPABcAAABuAAQAAgAPABgAAABvAAMAAgAOABcAAABvAAQAAgAOABgAAABwAAMAAgAPABcAAABwAAQAAgAPABgAAAA=")
 tile_set = SubResource("TileSet_vccnc")
 
@@ -191,3 +187,12 @@ position = Vector2(5129, -281)
 position = Vector2(4538, 153)
 
 [node name="UIInventory" parent="." instance=ExtResource("13_18vae")]
+
+[node name="Pickable2" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(142, 534)
+
+[node name="Pickable3" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(154, 492)
+
+[node name="Pickable4" parent="." instance=ExtResource("11_rfx1l")]
+position = Vector2(182, 527)

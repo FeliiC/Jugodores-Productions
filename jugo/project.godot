@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Manager="*res://manager.tscn"
 InventoryManager="*res://autoloads/inventory_manager.gd"
+GameState="*res://autoloads/game_state.gd"
 
 [display]
 
