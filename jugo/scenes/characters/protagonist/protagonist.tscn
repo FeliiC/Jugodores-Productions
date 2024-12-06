@@ -603,6 +603,7 @@ stream = ExtResource("10_xrp32")
 process_callback = 0
 wait_time = 6.0
 one_shot = true
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 32
