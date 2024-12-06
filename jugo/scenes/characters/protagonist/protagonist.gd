@@ -93,9 +93,8 @@ func _physics_process(delta: float) -> void:
 			
 			
 			
-	if tilemap == null:
-		print("No hay cuerdas.")
-		return
+	#if tilemap == null:
+		#print("No hay cuerdas.")
 		
 	if esta_enganchado == true and Input.is_action_just_pressed("jump"):
 		esta_enganchado = false
