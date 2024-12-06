@@ -14,7 +14,7 @@ extends Control
 @onready var quit: Button = %Quit
 @onready var sample: Button = %Sample
 @onready var levels = %Levels
-@onready var tutorial: Button = $VBoxContainer/Tutorial
+@onready var tutorial = %Tutorial
 
 #var main = preload("res://main.tscn")  #方法1
 @export var main: PackedScene
@@ -23,12 +23,13 @@ extends Control
 func _ready() -> void:
 	#start.pressed.connect(_on_start_pressed)
 	#credits.pressed.connect(_on_credits_pressed)
+	tutorial.pressed.connect(_on_tutorial_pressed)
 	sample.pressed.connect(_on_sample_pressed)
 	quit.pressed.connect(_on_quit_pressed)            #←
 	#quit.pressed.connect(func(): get_tree().quit())  #效果同上
 	#quit.pressed.connect(get_tree().quit）        #效果同上
 	levels.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/menus/levels_menu.tscn"))
-	tutorial.pressed.connect(_on_tutorial_pressed)
+	#newTutorial.pressed.connect(_on_new_tutorial_pressed)
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(main)
 	#get_tree().change_scene_to_file("res://main.tscn") #方法3(与方法1，方法2的缺点一样，
@@ -53,6 +54,9 @@ func _on_quit_pressed() -> void:
 
 func _on_sample_pressed() -> void:
 	Manager._go_to_sample_level()
-	
-func _on_tutorial_pressed() -> void:
+
+func _on_new_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/NewTutorial.tscn")
+
+func _on_tutorial_pressed() -> void:
+	Manager._go_to_tutorial_level()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr2gf8al76u6o"]
+[gd_scene load_steps=19 format=4 uid="uid://dr2gf8al76u6o"]
 
 [ext_resource type="PackedScene" uid="uid://csbfhv37x6q3i" path="res://scenes/characters/protagonist/protagonist.tscn" id="1_riqes"]
 [ext_resource type="PackedScene" uid="uid://ed0ywlfuc1h4" path="res://scenes/characters/enemies/enemy.tscn" id="2_3gt3h"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="7_yob64"]
 [ext_resource type="PackedScene" uid="uid://di5v2tm5ld384" path="res://scenes/characters/enemies/enemy_falling_type.tscn" id="8_niy06"]
 [ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="9_ksy2b"]
+[ext_resource type="PackedScene" uid="uid://cgwys2mewrcnh" path="res://interactive/platform_cb.tscn" id="10_fk3oa"]
+[ext_resource type="PackedScene" uid="uid://gj6ae8qxd084" path="res://interactive/lever.tscn" id="11_vjse6"]
+[ext_resource type="PackedScene" uid="uid://bqqdf2r56hlg5" path="res://interactive/tile_map_layer_interactive.tscn" id="12_gqeo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0up5h"]
 size = Vector2(300, 20)
@@ -92,16 +95,17 @@ scale = Vector2(5, 0.351)
 texture = ExtResource("4_equv4")
 
 [node name="Enemy" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-627, 62)
+position = Vector2(176, -441)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_3gt3h")]
-position = Vector2(-322, -338)
+position = Vector2(355, -569)
 
 [node name="jumping_enemy" parent="." instance=ExtResource("3_s5qy0")]
 position = Vector2(347, -237)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(180, 316)
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-203, -84)
@@ -114,7 +118,7 @@ scale = Vector2(2.33594, 0.164063)
 texture = ExtResource("4_equv4")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_riqes")]
-position = Vector2(18, 150)
+position = Vector2(-606, 119)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(338, 371)
@@ -146,7 +150,7 @@ libraries = {
 autoplay = "Platform_move1"
 
 [node name="Follow_Enemy" parent="." instance=ExtResource("5_6xig0")]
-position = Vector2(365, 142)
+position = Vector2(549, -257)
 
 [node name="Pickable" parent="." instance=ExtResource("6_j0i3t")]
 position = Vector2(131, 172)
@@ -160,5 +164,22 @@ display_name = "Key"
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("8_niy06")]
 position = Vector2(-124, -512)
+collision_mask = 64
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_ksy2b")]
+
+[node name="PlatformCB" parent="." instance=ExtResource("10_fk3oa")]
+position = Vector2(439, 205)
+leverName = "Lever"
+leverName2 = "Lever3"
+
+[node name="Lever3" parent="PlatformCB" instance=ExtResource("11_vjse6")]
+position = Vector2(735, -48)
+
+[node name="Lever" parent="." instance=ExtResource("11_vjse6")]
+position = Vector2(235, 166)
+
+[node name="Lever2" parent="." instance=ExtResource("11_vjse6")]
+
+[node name="TileMapLayerInteractive" parent="." instance=ExtResource("12_gqeo7")]
+tile_map_data = PackedByteArray("AAABAP//AQAKAAQAAAACAP//AQALAAQAAAADAP//AQALAAQAAAAEAP//AQALAAQAAAAFAP//AQAMAAQAAAD2/wIAAQALAAQAAAD3/wIAAQALAAQAAAD4/wIAAQALAAQAAAD5/wIAAQALAAQAAAD6/wIAAQAMAAQAAAD1/wIAAQALAAQAAAD0/wIAAQALAAQAAADz/wIAAQAKAAQAAAA=")

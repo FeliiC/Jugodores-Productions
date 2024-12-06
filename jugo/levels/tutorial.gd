@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var ui_inventory: CanvasLayer = $UIInventory
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +11,7 @@ func _physics_process(delta: float) -> void:
 		ui_inventory.keysNum = 0
 		print("3 keys")
 		get_tree().paused = true
-		Manager._go_to_victory_menu()
+		Manager._go_to_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,4 +19,4 @@ func _process(delta):
 
 
 func set_lastScene() -> void:
-	InventoryManager.lastCheckpoint = "res://levels/cave_level.tscn"
+	InventoryManager.lastCheckpoint = "res://levels/tutorial.tscn"

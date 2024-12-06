@@ -7,3 +7,4 @@
 script = ExtResource("1_wv3ru")
 display_name = "Tutorial"
 scene = ExtResource("1_m81le")
+id = ""

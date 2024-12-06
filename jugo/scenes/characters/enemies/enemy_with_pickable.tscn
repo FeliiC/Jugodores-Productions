@@ -12,7 +12,7 @@
 size = Vector2(120, 120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhh0n"]
-radius = 330.6
+radius = 341.432
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2gh"]
 size = Vector2(128.571, 24.2857)
@@ -23,7 +23,7 @@ size = Vector2(125.714, 123.286)
 [node name="EnemyWithPickable" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 collision_layer = 3
-collision_mask = 3
+collision_mask = 131
 script = ExtResource("1_d7ys8")
 pickable_item = ExtResource("2_ypo0h")
 
