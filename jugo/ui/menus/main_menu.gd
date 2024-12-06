@@ -55,4 +55,4 @@ func _on_sample_pressed() -> void:
 	Manager._go_to_sample_level()
 	
 func _on_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/CaveLevel.tscn")
+	get_tree().change_scene_to_file("res://levels/NewTutorial.tscn")
