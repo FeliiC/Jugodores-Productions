@@ -6,6 +6,8 @@ extends Node
 @export var victoryMenuScene: PackedScene
 @export var sampleScene: PackedScene
 @export var num: int = 0
+@export var playerInvoke = false
+@export var playerInRange = false
 # Called when the node enters the scene tree for the first time.
 @export var levels: Array[LevelInfo]
 

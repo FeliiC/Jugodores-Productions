@@ -594,3 +594,8 @@ bus = &"Sound"
 
 [node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_xrp32")
+
+[node name="Cooldown" type="Timer" parent="."]
+process_callback = 0
+wait_time = 6.0
+one_shot = true

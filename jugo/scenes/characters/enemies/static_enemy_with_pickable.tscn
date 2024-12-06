@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfhh62j7dhts6"]
+
+[ext_resource type="Script" path="res://scenes/characters/enemies/static_enemy_with_pickable.gd" id="1_qs17m"]
+[ext_resource type="Script" path="res://components/hurt_box.gd" id="3_356tf"]
+[ext_resource type="Script" path="res://components/hit_box.gd" id="4_0qn1d"]
+[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="5_i5tx8"]
+[ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="6_xtmg0"]
+[ext_resource type="Texture2D" uid="uid://bwkl0olcjg2tj" path="res://assets/items/key_32x32_24f.png" id="7_4jhco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
+size = Vector2(120, 120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhh0n"]
+radius = 330.6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2gh"]
+size = Vector2(128.571, 24.2857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ed1s"]
+size = Vector2(125.714, 123.286)
+
+[node name="EnemyWithPickable" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_qs17m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4bs77")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_jhh0n")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_356tf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(4.51292e-06, 59.2857)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_wc2gh")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_0qn1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-2.17131e-06, -2.64286)
+shape = SubResource("RectangleShape2D_1ed1s")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Pivot"]
+position = Vector2(58, 55)
+target_position = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+modulate = Color(0.99435, 0.853711, 0.655458, 1)
+self_modulate = Color(0.491923, 0.692468, 0.318552, 1)
+texture = ExtResource("5_i5tx8")
+
+[node name="JumpCooldown" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xtmg0")
+bus = &"Sound"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("7_4jhco")
+hframes = 24

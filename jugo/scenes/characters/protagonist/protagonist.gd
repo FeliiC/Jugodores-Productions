@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var ui_inventory: CanvasLayer = $"../UIInventory"
 @onready var jump_sound: AudioStreamPlayer2D = $Jump_sound
 @onready var kill_enemy_sound: AudioStreamPlayer = $Kill_enemy_sound
+@onready var cooldown: Timer = $Cooldown
 
 
 
@@ -36,6 +37,12 @@ func _physics_process(delta: float) -> void:
 	if move_input != 0:
 		pivot.scale.x = sign(move_input)
 	
+	if Input.is_action_just_pressed("invoke"):
+		if (Manager.playerInRange):
+			invoke()
+			
+		
+		
 	#if ui_inventory.keysNum >= 3:
 		##InventoryManager.num = 0
 		#get_tree().paused = true
@@ -88,3 +95,8 @@ func take_damage(damage: int):
 	Manager._go_to_failed_menu()
 	
 	
+func invoke() -> void:
+	if cooldown.time_left:
+		return
+	Manager.playerInvoke = true
+	cooldown.start()

@@ -14,6 +14,7 @@ extends Control
 @onready var quit: Button = %Quit
 @onready var sample: Button = %Sample
 @onready var levels = %Levels
+@onready var tutorial: Button = $VBoxContainer/Tutorial
 
 #var main = preload("res://main.tscn")  #方法1
 @export var main: PackedScene
@@ -27,6 +28,7 @@ func _ready() -> void:
 	#quit.pressed.connect(func(): get_tree().quit())  #效果同上
 	#quit.pressed.connect(get_tree().quit）        #效果同上
 	levels.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/menus/levels_menu.tscn"))
+	tutorial.pressed.connect(_on_tutorial_pressed)
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(main)
 	#get_tree().change_scene_to_file("res://main.tscn") #方法3(与方法1，方法2的缺点一样，
@@ -37,8 +39,9 @@ func _on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(main)
 	
 	
-#func _on_credits_pressed() -> void:
+func _on_credits_pressed() -> void:
 	#get_tree().change_scene_to_file("res://credits.tscn")
+	get_tree().change_scene_to_file("credits")
 	
 	
 	#Manager._go_to_credits()
@@ -50,3 +53,6 @@ func _on_quit_pressed() -> void:
 
 func _on_sample_pressed() -> void:
 	Manager._go_to_sample_level()
+	
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/CaveLevel.tscn")
