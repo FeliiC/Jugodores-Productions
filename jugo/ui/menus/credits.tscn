@@ -25,8 +25,14 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "[center]Project Lead: [/center]
+text = "[center]Project Leaders: [/center]
 [center]Elías Zelada[/center]
+[center]Eric Kirchgessner[/center]
+[center]
+Nadia Decar[/center]
+[center]
+Vicente Soto[/center]
+
 
 [center]Producers: [/center]
 [center]
