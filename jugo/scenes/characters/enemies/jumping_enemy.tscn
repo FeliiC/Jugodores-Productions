@@ -25,7 +25,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.125156, 3.67127)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vykec")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
@@ -47,7 +46,6 @@ script = ExtResource("3_lk0yw")
 light_mask = 2
 visibility_layer = 2
 position = Vector2(0.25031, 3.67127)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rbe5v")
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -62,7 +60,6 @@ script = ExtResource("4_25kg2")
 light_mask = 8
 visibility_layer = 8
 position = Vector2(0.0625771, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4dlup")
 
 [node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]
