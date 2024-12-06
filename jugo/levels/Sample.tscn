@@ -344,10 +344,6 @@ tile_set = SubResource("TileSet_t7moc")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_3ul3w")]
 position = Vector2(-107, 585)
-speed = 400
-gravity = 2000
-acceleration = 2000
-attacking = false
 
 [node name="FallingEnemy" parent="." instance=ExtResource("3_vngyc")]
 position = Vector2(87, 212)
