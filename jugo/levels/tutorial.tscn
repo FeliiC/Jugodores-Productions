@@ -253,12 +253,9 @@ position = Vector2(-90, 667)
 [node name="Pickable6" parent="." instance=ExtResource("8_n6q0q")]
 position = Vector2(-71, 594)
 
-<<<<<<< HEAD
 [node name="PauseMenu" parent="." instance=ExtResource("12_paxky")]
-=======
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jdt62")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
->>>>>>> 66be27cd08dae39159db4b3f251cd5e59451ee50
