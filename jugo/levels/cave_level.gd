@@ -21,4 +21,4 @@ func _process(delta):
 
 
 func set_lastScene() -> void:
-	InventoryManager.lastCheckpoint = "res://levels/cave_level.tscn"
+	InventoryManager.lastCheckpoint = "res://levels/caveLevel.tscn"

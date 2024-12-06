@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dfikvtvm2cls1"]
+[gd_scene load_steps=18 format=4 uid="uid://dfikvtvm2cls1"]
 
 [ext_resource type="Texture2D" uid="uid://dqlkle3t4t5wk" path="res://scenes/characters/enemies/mainlev_build.png" id="1_1b3o8"]
 [ext_resource type="Texture2D" uid="uid://68dwuahfxeh1" path="res://assets/tilesets/cuevas/background1.png" id="1_hqp0g"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d1q6y6b5lck3w" path="res://components/kill_zone.tscn" id="10_k2gjd"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="11_rfx1l"]
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="13_18vae"]
+[ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="14_6f1kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4al2"]
 texture = ExtResource("1_1b3o8")
@@ -196,3 +197,5 @@ position = Vector2(154, 492)
 
 [node name="Pickable4" parent="." instance=ExtResource("11_rfx1l")]
 position = Vector2(182, 527)
+
+[node name="PauseMenu" parent="." instance=ExtResource("14_6f1kf")]
