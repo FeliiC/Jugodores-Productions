@@ -1,17 +1,19 @@
 [gd_scene load_steps=9 format=3 uid="uid://bp1shbul5kd5s"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemies/jumping_enemy.gd" id="1_avnu5"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="2_wrrrt"]
+[ext_resource type="Texture2D" uid="uid://clrydvahufnb8" path="res://assets/enemiesAssets/free street animals/8 Bird 2/Death.png" id="2_qdgsk"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_lk0yw"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="4_25kg2"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="5_wwq8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vykec"]
+size = Vector2(15.5193, 12.6575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbe5v"]
+size = Vector2(15.5193, 12.6575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dlup"]
-size = Vector2(19, 4)
+size = Vector2(15.8947, 4)
 
 [node name="jumping_enemy" type="CharacterBody2D"]
 light_mask = 3
@@ -22,6 +24,8 @@ script = ExtResource("1_avnu5")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125156, 3.67127)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vykec")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
@@ -29,8 +33,10 @@ modulate = Color(0.870903, 0.517788, 0.612551, 1)
 self_modulate = Color(0.911269, 0.00953193, 9.62615e-08, 1)
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(0.144793, 0.137245)
-texture = ExtResource("2_wrrrt")
+position = Vector2(1.50186, -8.60657)
+scale = Vector2(1, 0.945)
+texture = ExtResource("2_qdgsk")
+hframes = 5
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 4
@@ -40,6 +46,8 @@ script = ExtResource("3_lk0yw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 light_mask = 2
 visibility_layer = 2
+position = Vector2(0.25031, 3.67127)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rbe5v")
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -53,6 +61,8 @@ script = ExtResource("4_25kg2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 light_mask = 8
 visibility_layer = 8
+position = Vector2(0.0625771, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4dlup")
 
 [node name="Kill_enemy_sound" type="AudioStreamPlayer" parent="."]

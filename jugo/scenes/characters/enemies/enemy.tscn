@@ -1,22 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://ed0ywlfuc1h4"]
 
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="1_4u4nf"]
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy.gd" id="1_nekew"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="3_27qxi"]
+[ext_resource type="Texture2D" uid="uid://djwk1yygutcre" path="res://assets/enemiesAssets/free street animals/7 Bird/Death.png" id="4_1y0xl"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="4_mlln6"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="5_oalp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
-size = Vector2(120, 120)
+size = Vector2(104.286, 85.7143)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhh0n"]
 radius = 330.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2gh"]
-size = Vector2(110, 20)
+size = Vector2(113.571, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ed1s"]
-size = Vector2(140, 129)
+size = Vector2(102.857, 84.7143)
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
@@ -25,6 +25,8 @@ collision_mask = 131
 script = ExtResource("1_nekew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.57143, 17.1429)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4bs77")
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -40,7 +42,8 @@ collision_mask = 8
 script = ExtResource("3_27qxi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 60)
+position = Vector2(3.21428, 58.5714)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wc2gh")
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -49,7 +52,8 @@ collision_mask = 4
 script = ExtResource("4_mlln6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -5.5)
+position = Vector2(2.85715, 16.6429)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1ed1s")
 
 [node name="Pivot" type="Node2D" parent="."]
@@ -61,7 +65,10 @@ target_position = Vector2(0, 20)
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 modulate = Color(0.0313726, 1, 1, 1)
 self_modulate = Color(1, 0, 1, 1)
-texture = ExtResource("1_4u4nf")
+position = Vector2(4.28571, -18.5714)
+scale = Vector2(5, 5)
+texture = ExtResource("4_1y0xl")
+hframes = 5
 
 [node name="WallDetector" type="RayCast2D" parent="Pivot"]
 target_position = Vector2(70, 0)
