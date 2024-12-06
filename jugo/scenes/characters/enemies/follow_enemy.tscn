@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/characters/enemies/follow_enemy.gd" id="1_kdthl"]
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="2_t58a7"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_xpejo"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_0fxwy"]
+[ext_resource type="Texture2D" uid="uid://dn2xbt3a3ynwi" path="res://assets/enemiesAssets/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Attack.png" id="4_332r8"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="5_jd42n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs77"]
@@ -61,7 +61,10 @@ target_position = Vector2(0, 20)
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 modulate = Color(0.730448, 0.412201, 1, 0.721569)
 self_modulate = Color(1, 0, 1, 1)
-texture = ExtResource("4_0fxwy")
+position = Vector2(-1, -74)
+scale = Vector2(4.35, 4.35)
+texture = ExtResource("4_332r8")
+hframes = 10
 
 [node name="JumpCooldown" type="Timer" parent="."]
 process_callback = 0

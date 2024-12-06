@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="2_sepfr"]
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="2_ypo0h"]
 [ext_resource type="Script" path="res://components/hit_box.gd" id="3_yfpqk"]
-[ext_resource type="Texture2D" uid="uid://pyymwkt5tr40" path="res://icon.svg" id="4_1uldq"]
+[ext_resource type="Texture2D" uid="uid://dn2xbt3a3ynwi" path="res://assets/enemiesAssets/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Attack.png" id="5_oiu38"]
 [ext_resource type="AudioStream" uid="uid://kjih7ym5xyj1" path="res://assets/Basic sound test/sound/Kill_enemy_sound(test).ogg" id="6_2mxaw"]
 [ext_resource type="Texture2D" uid="uid://bwkl0olcjg2tj" path="res://assets/items/key_32x32_24f.png" id="7_yxalu"]
 
@@ -29,6 +29,8 @@ pickable_item = ExtResource("2_ypo0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4bs77")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
@@ -65,7 +67,10 @@ target_position = Vector2(0, 20)
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 modulate = Color(0.99435, 0.853711, 0.655458, 1)
 self_modulate = Color(0.491923, 0.692468, 0.318552, 1)
-texture = ExtResource("4_1uldq")
+position = Vector2(1.42857, -70)
+scale = Vector2(4.35, 4.35)
+texture = ExtResource("5_oiu38")
+hframes = 10
 
 [node name="JumpCooldown" type="Timer" parent="."]
 process_callback = 0
