@@ -18,25 +18,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -255.0
-offset_top = -228.0
-offset_right = 255.0
-offset_bottom = 192.0
+offset_left = -395.0
+offset_top = -210.0
+offset_right = 395.0
+offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[center]Project Leaders: [/center]
 [center]Elías Zelada[/center]
 [center]Eric Kirchgessner[/center]
-[center]
-Nadia Decar[/center]
-[center]
-Vicente Soto[/center]
+[center]Nadia Decar[/center]
+[center]Vicente Soto[/center]
 
 
 [center]Producers: [/center]
-[center]
-Felipe Caballero[/center]
+[center]Felipe Caballero[/center]
 [center]Lorenzo Gao[/center]
 [center]Sebastián Aguilera M.[/center]
 [center]Sebastián Collao S.[/center]
@@ -48,11 +45,11 @@ Felipe Caballero[/center]
 [center]@KenneyNL (Kenney)[/center]
 [center]@Centuria Game Dev[/center]
 [center]@OboroPixel[/center]
-[center]@[/center]
-[center]@[/center]
-[center]@[/center]
-[center]@[/center]
-[center]@[/center]
+[center]@brullov_art (Artem Brullov)[/center]
+[center]@TheFlavare (The Flavare)[/center]
+[center]@ansimuz[/center]
+[center]@seartsy[/center]
+[center]@szadiart[/center]
 [center]@[/center]
 [center]@[/center]
 [center]@[/center]
