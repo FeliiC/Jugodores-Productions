@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dfikvtvm2cls1"]
+[gd_scene load_steps=19 format=4 uid="uid://dfikvtvm2cls1"]
 
 [ext_resource type="Texture2D" uid="uid://dqlkle3t4t5wk" path="res://scenes/characters/enemies/mainlev_build.png" id="1_1b3o8"]
 [ext_resource type="Texture2D" uid="uid://68dwuahfxeh1" path="res://assets/tilesets/cuevas/background1.png" id="1_hqp0g"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cub4ex0s8y00q" path="res://scenes/Items/pickable.tscn" id="11_rfx1l"]
 [ext_resource type="PackedScene" uid="uid://bbyyi485b73vk" path="res://ui/Items/ui_inventory.tscn" id="13_18vae"]
 [ext_resource type="PackedScene" uid="uid://cdkiwccuipfn7" path="res://ui/menus/pause_menu.tscn" id="14_6f1kf"]
+[ext_resource type="AudioStream" uid="uid://4bpyaw87m30o" path="res://assets/Basic sound test/music/lvl_music(test2).mp3" id="15_mcnrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4al2"]
 texture = ExtResource("1_1b3o8")
@@ -199,3 +200,9 @@ position = Vector2(154, 492)
 position = Vector2(182, 527)
 
 [node name="PauseMenu" parent="." instance=ExtResource("14_6f1kf")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mcnrg")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
